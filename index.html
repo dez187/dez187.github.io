@@ -28,6 +28,11 @@ a.id,.id{grid-column:span 4;background:var(--r);color:#fff;display:grid;place-it
 .about{grid-column:span 12;font:500 clamp(1.2rem,2.2vw,1.8rem)/1.35 "Space Grotesk";background:var(--w)}
 .h{grid-column:span 12;font:400 clamp(1.8rem,4.2vw,3.2rem)/1 "Archivo Black";text-transform:uppercase;margin:34px 0 0;padding:0 4px;display:flex;align-items:center;gap:14px}
 .h::after{content:"";flex:1;height:6px;background:var(--k);border-radius:3px}
+.cvh::after{display:none}
+.cvh .ln{flex:1;height:6px;background:var(--k);border-radius:3px;min-width:14px}
+.cvh .dlb{flex:0 0 auto;font-size:.8rem;padding:.55rem .95rem;background:#E6007E;color:#fff;box-shadow:4px 4px 0 var(--k);white-space:nowrap}
+.cvh .dlb:hover{box-shadow:2px 2px 0 var(--k)}
+@media (max-width:600px){.cvh{gap:10px;flex-wrap:wrap}.cvh .dlb{order:3;flex:1 0 100%;text-align:center;font-size:.8rem;padding:.6rem .8rem;border-width:3px;box-shadow:3px 3px 0 var(--k)}.cvh .ln:last-child{display:none}.cvh span{white-space:nowrap}}
 .sk{grid-column:span 4}
 .sk .k{display:inline-grid;place-items:center;min-width:46px;height:46px;background:var(--c);color:#fff;border:3px solid var(--k);border-radius:12px;font:700 1rem "Space Mono"}
 .sk h3{font:400 1.45rem/1.1 "Archivo Black";text-transform:uppercase;margin:.8rem 0 .4rem}.sk p{margin:0 0 14px}
@@ -89,7 +94,7 @@ html{-webkit-text-size-adjust:100%}
   <div class="t about" id="about"></div>
   <div class="h" id="progetti">Progetti</div><div id="proj" style="display:contents"></div>
   <div class="h" id="cosa">Cosa so fare</div><div id="skills" style="display:contents"></div>
-  <div class="h" id="cv">Curriculum</div>
+  <div class="h cvh" id="cv"><span>Curriculum</span><i class="ln"></i><a class="btn dlb" href="curriculum-matteo-donati.pdf" download="Curriculum-Matteo-Donati.pdf" target="_blank" rel="noopener">Scarica il PDF ↓</a><i class="ln"></i></div>
   <div class="t cv" id="tl"></div>
   <div class="side"><div class="t"><h4>Formazione</h4><div id="tr"></div></div><div class="t"><h4>Lingue e strumenti</h4><div id="lg"></div><div class="tags" id="tools" style="margin-top:12px"></div><h4 style="margin-top:18px">Fuori dal lavoro</h4><div class="tags" id="also"></div></div></div>
   <div class="t cta"><h2>Facciamo qualcosa?</h2><p>Se volete parlare di un'idea, di un progetto o semplicemente conoscermi, il posto giusto è LinkedIn.</p><a class="btn" id="li2" href="#" target="_blank" rel="noopener">Apri il profilo LinkedIn ↗</a></div>
@@ -165,8 +170,7 @@ $('skills').innerHTML=P.skills.map(function(s,i){return '<div class="t sk" style
 var bg={jp:'url('+IMGJP+')',pp:'url('+IMGPP+')',pt:'url('+IMGFP+')',ag:'url(data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20800%20500%27%3E%3Cdefs%3E%3CradialGradient%20id=%27g%27%20cx=%2750%25%27%20cy=%2742%25%27%20r=%2770%25%27%3E%3Cstop%20offset=%270%27%20stop-color=%27%236a3dff%27/%3E%3Cstop%20offset=%27.55%27%20stop-color=%27%23241356%27/%3E%3Cstop%20offset=%271%27%20stop-color=%27%230b0716%27/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect%20width=%27800%27%20height=%27500%27%20fill=%27url%28%23g%29%27/%3E%3Cg%20fill=%27none%27%20stroke=%27%23b9a4ff%27%20stroke-opacity=%27.35%27%3E%3Ccircle%20cx=%27400%27%20cy=%27250%27%20r=%27215%27/%3E%3Ccircle%20cx=%27400%27%20cy=%27250%27%20r=%27185%27%20stroke-dasharray=%274%2010%27/%3E%3Ccircle%20cx=%27400%27%20cy=%27250%27%20r=%27150%27/%3E%3C/g%3E%3Cg%20stroke=%27%23ffd60a%27%20stroke-width=%275%27%20stroke-linejoin=%27round%27%20fill=%27%231a0f3d%27%3E%3Cpolygon%20points=%27400,70%20560,160%20560,340%20400,430%20240,340%20240,160%27/%3E%3C/g%3E%3Cg%20stroke=%27%23ffd60a%27%20stroke-width=%273%27%20stroke-opacity=%27.8%27%20fill=%27none%27%3E%3Cpolygon%20points=%27400,70%20560,340%20240,340%27/%3E%3Cpolygon%20points=%27400,430%20240,160%20560,160%27/%3E%3C/g%3E%3Ctext%20x=%27400%27%20y=%27282%27%20text-anchor=%27middle%27%20font-family=%27Georgia,serif%27%20font-size=%2796%27%20font-weight=%27700%27%20fill=%27%23ffd60a%27%3E20%3C/text%3E%3Cg%20fill=%27%23fff%27%20fill-opacity=%27.7%27%3E%3Ccircle%20cx=%2790%27%20cy=%2770%27%20r=%272%27/%3E%3Ccircle%20cx=%27700%27%20cy=%27110%27%20r=%273%27/%3E%3Ccircle%20cx=%27640%27%20cy=%27420%27%20r=%272%27/%3E%3Ccircle%20cx=%27140%27%20cy=%27400%27%20r=%273%27/%3E%3Ccircle%20cx=%27740%27%20cy=%27300%27%20r=%272%27/%3E%3Ccircle%20cx=%2760%27%20cy=%27240%27%20r=%272%27/%3E%3C/g%3E%3C/svg%3E)'};
 $('proj').innerHTML=P.projects.map(function(p){return '<a class="t pj" href="'+p.href+'"'+(p.ext?' target="_blank" rel="noopener"':'')+'><div class="im" style="background-image:'+bg[p.img]+'"></div><div class="b"><span class="tg">'+esc(p.tag)+'</span><h3>'+esc(p.t)+'</h3><p>'+esc(p.d)+'</p></div></a>';}).join('');
 if(P.projects.length===4)document.querySelectorAll('a.pj').forEach(function(a){a.classList.add('q');});
-var dl='<div class="dl"><a class="btn" href="curriculum-matteo-donati.pdf" download="Curriculum-Matteo-Donati.pdf" target="_blank" rel="noopener">Scarica il curriculum (PDF)</a><span>2 pagine, A4</span></div>';
-$('tl').innerHTML=dl+P.timeline.map(function(t){return '<div class="it"><div class="y">'+esc(t.y)+'</div><div><h4>'+esc(t.t)+'</h4><div class="o">'+esc(t.o)+'</div><p>'+esc(t.d)+'</p></div></div>';}).join('');
+$('tl').innerHTML=P.timeline.map(function(t){return '<div class="it"><div class="y">'+esc(t.y)+'</div><div><h4>'+esc(t.t)+'</h4><div class="o">'+esc(t.o)+'</div><p>'+esc(t.d)+'</p></div></div>';}).join('');
 $('tr').innerHTML=P.training.map(function(t){return '<div class="tr"><b>'+t[0]+'</b><span>'+esc(t[1])+'</span></div>';}).join('');
 $('lg').innerHTML=P.langs.map(function(l){return '<div class="tr"><b style="width:auto">'+esc(l[0])+'</b><span>'+esc(l[1])+'</span></div>';}).join('');
 $('tools').innerHTML=P.tools.map(function(t){return '<span>'+esc(t)+'</span>';}).join('');$('also').innerHTML=P.also.map(function(t){return '<span>'+esc(t)+'</span>';}).join('');
