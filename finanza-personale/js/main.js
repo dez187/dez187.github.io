@@ -20,11 +20,13 @@ function seed(force) {
 }
 
 function banner() {
+  const small = window.matchMedia("(max-width: 600px)").matches;
   const b = document.createElement("div");
   b.setAttribute("role", "note");
-  b.style.cssText = "position:fixed;left:0;right:0;bottom:0;z-index:9999;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;padding:8px 14px;background:#0b0b0b;color:#ffd60a;font:600 13px/1.3 system-ui,sans-serif;border-top:3px solid #ffd60a";
-  b.innerHTML = '<span>Demo con dati di fantasia: nulla di ciò che inserisci lascia questo browser.</span><button type="button" id="demo-reset" style="background:#ffd60a;color:#0b0b0b;border:0;border-radius:8px;padding:5px 10px;font:700 12px system-ui;cursor:pointer">Ripristina i dati</button><a href="../" style="color:#fff">← Progetti</a>';
+  b.style.cssText = "position:fixed;left:0;right:0;bottom:0;z-index:9999;display:flex;gap:" + (small ? "10px" : "12px") + ";align-items:center;justify-content:center;flex-wrap:nowrap;padding:" + (small ? "6px 10px calc(6px + env(safe-area-inset-bottom,0px))" : "8px 14px") + ";background:#0b0b0b;color:#ffd60a;font:600 " + (small ? "12px" : "13px") + "/1.3 system-ui,sans-serif;border-top:3px solid #ffd60a";
+  b.innerHTML = '<span>' + (small ? "Demo con dati di fantasia" : "Demo con dati di fantasia: nulla di ciò che inserisci lascia questo browser.") + '</span><button type="button" id="demo-reset" style="background:#ffd60a;color:#0b0b0b;border:0;border-radius:8px;padding:5px 9px;font:700 12px system-ui;cursor:pointer;white-space:nowrap">Ripristina</button><a href="../" style="color:#fff;white-space:nowrap">← Progetti</a>';
   document.body.appendChild(b);
+  document.body.style.paddingBottom = b.offsetHeight + "px";
   document.getElementById("demo-reset").addEventListener("click", () => { seed(true); location.reload(); });
 }
 
