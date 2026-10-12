@@ -49,6 +49,9 @@ h2.sec small{display:block;font:500 .78rem "JetBrains Mono",monospace;letter-spa
 .go::after{content:"→";transition:transform .25s}.card:hover .go::after{transform:translateX(8px)}
 .k{position:absolute;right:20px;top:6px;z-index:-1;font:400 11rem/1 "Instrument Serif",serif;color:#ffffff12;pointer-events:none}
 .ascension .bg{background:radial-gradient(120% 100% at 80% 0%,#7C5CFF 0%,#2a1b66 40%,#0d1218 80%)}
+.prev .bg{background:radial-gradient(120% 100% at 15% 0%,#19D3C5 0%,#0b4e5a 38%,#0d1218 80%)}
+.soonlabel{color:#D5DAE0;font:500 .78rem "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase}
+.soonlabel::after{content:""!important}
 .soon .bg{background:repeating-linear-gradient(135deg,#0d1218 0 14px,#10161d 14px 28px)}
 .soon h3,.soon p{color:#9BA3AE}
 footer{position:relative;z-index:2;margin-top:100px;border-top:1px solid var(--line);padding:30px 0 50px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--mut);font:500 .8rem "JetBrains Mono",monospace;letter-spacing:.06em}
@@ -83,7 +86,14 @@ footer{position:relative;z-index:2;margin-top:100px;border-top:1px solid var(--l
    <p>Lo strumento del Game Master: sessioni, sezioni di dungeon e appunti di campagna.</p>
    <span class="go">Apri l'app</span>
   </a>
-  <div class="card wide soon reveal" style="cursor:default">
+  <div class="card mid prev reveal" style="cursor:default">
+   <div class="bg"></div><span class="k">€</span>
+   <span class="tag">Strumento · in arrivo</span>
+   <h3>PreventivoPDF</h3>
+   <p>Un generatore di preventivi, proforma e ricevute in PDF, direttamente dal browser e senza account.</p>
+   <span class="go soonlabel">In preparazione</span>
+  </div>
+  <div class="card big soon reveal" style="cursor:default">
    <div class="bg"></div>
    <span class="tag">In arrivo</span>
    <h3>Il prossimo progetto</h3>
