@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Giappone 2027 · Rivista di viaggio</title>
+<title>Giappone 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Hanken+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Zen+Old+Mincho:wght@700;900&display=swap">
 <style>/* required styles */
 
 
@@ -1328,142 +1328,60 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 </style>
 <style>
-:root{--bg:#FCFCFB;--ink:#101820;--mut:#5B6670;--line:#E3E6E8;--acc:#C8321F;--card:#fff;--soft:#F1F3F4;--disp:"Cormorant Garamond",Georgia,serif;--sans:"Hanken Grotesk",system-ui,sans-serif}
-:root[data-theme=dark]{--bg:#0E1318;--ink:#EEF1F3;--mut:#9AA6B0;--line:#26303A;--acc:#FF6B55;--card:#151C23;--soft:#1B242C}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0E1318;--ink:#EEF1F3;--mut:#9AA6B0;--line:#26303A;--acc:#FF6B55;--card:#151C23;--soft:#1B242C}}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--sans)}
-a{color:inherit}
-#prog{position:fixed;top:0;left:0;height:3px;background:var(--acc);width:0;z-index:100}
-.hero{position:relative;min-height:92vh;display:grid;align-items:end;color:#fff;background:#10161c center/cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0006 0%,#000B 100%)}
-.hero>div{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 24px 72px;width:100%}
-.kick{letter-spacing:.28em;text-transform:uppercase;font-size:.78rem;font-weight:700;opacity:.85}
-.hero h1{font:500 clamp(3.4rem,11vw,8.5rem)/.92 var(--disp);margin:.3em 0 .2em;letter-spacing:-.01em}
-.hero h1 em{color:#FFB3A6;font-style:italic}
-.hero p{max-width:50ch;font-size:1.2rem;opacity:.92}
-.facts{display:flex;gap:2.2rem;flex-wrap:wrap;margin-top:1.6rem;font-size:.95rem}
-.facts b{display:block;font:600 1.5rem var(--disp)}
-.route{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem}
-.route span{border:1px solid #fff6;padding:.15rem .8rem;border-radius:999px;font-size:.82rem}
-nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:1.4rem;padding:.7rem 16px;flex-wrap:wrap;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-nav a{text-decoration:none;color:var(--mut)}nav a:hover,nav a.on{color:var(--acc)}
-#theme{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:32px;height:32px;cursor:pointer;font-size:15px}
-main{max-width:1120px;margin:0 auto;padding:0 24px}
-section{padding:84px 0 20px}
-.head{text-align:center;margin-bottom:40px}
-.head .kick{color:var(--acc)}
-.head h2{font:500 clamp(2.4rem,6vw,4rem)/1 var(--disp);margin:.15em 0}
-.head p{color:var(--mut);max-width:60ch;margin:.4em auto 0}
-h3.mid{text-align:center;font:600 1.7rem var(--disp);margin:2.4rem 0 1rem}
-.two{display:flex;flex-wrap:wrap;justify-content:center;gap:28px}
-figure.fl{margin:0;flex:0 1 460px;max-width:460px;width:100%;background:var(--card);border:1px solid var(--line)}
-figure.fl img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
-figure.fl figcaption{padding:20px 22px 24px;text-align:center}
-figure.fl h3{font:600 1.7rem var(--disp);margin:.1em 0}
-.pr{font:700 1.9rem var(--disp);color:var(--acc)}
-.sub{color:var(--mut);font-size:.9rem}
-.tbl{overflow-x:auto;border:1px solid var(--line);background:var(--card)}
-table{border-collapse:collapse;width:100%;font-size:.92rem}
-th,td{padding:.7rem .9rem;border-bottom:1px solid var(--line);text-align:left}th{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
-td.n{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}tr.pick td{background:color-mix(in srgb,var(--acc) 10%,transparent);font-weight:700}
-.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 14px}
-.chips button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:.4rem .9rem;border-radius:999px;font:700 .82rem var(--sans);cursor:pointer}
-.chips button.on{background:var(--ink);color:var(--bg)}
-.daychips button{border-top:3px solid var(--c);border-radius:6px;padding:.3rem .6rem;min-width:3.4rem;line-height:1.2}
-.mapgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px;align-items:stretch}
-@media (max-width:900px){.mapgrid{grid-template-columns:minmax(0,1fr)}}
-#map{height:100%;min-height:600px;background:var(--soft);border:1px solid var(--line)}
-.panel{background:var(--card);border:1px solid var(--line);padding:20px 22px}
-.panel h3{font:600 1.7rem/1.15 var(--disp);margin:.1em 0 .2em}
-.panel .stop{display:grid;grid-template-columns:56px 1fr auto;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:.92rem}
-.panel .stop.has{cursor:pointer}.panel .stop.has:hover{background:var(--soft)}
-.panel .no{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--acc);color:#fff;font-size:.7rem;margin-right:6px}
-.city{margin:0 0 70px}
-.city .cover{position:relative;aspect-ratio:21/8;background:#223 center/cover;display:grid;place-items:center;color:#fff;text-align:center}
-.city .cover::after{content:"";position:absolute;inset:0;background:#0007}
-.city .cover div{position:relative;z-index:1}
-.city .cover h3{font:500 clamp(2.4rem,7vw,5rem)/1 var(--disp);margin:0}
-.city .cover span{letter-spacing:.2em;text-transform:uppercase;font-size:.78rem}
-.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:22px}
-details.d{background:var(--card);border:1px solid var(--line)}
-details.d summary{cursor:pointer;list-style:none;padding:16px 18px;display:flex;gap:14px;align-items:baseline}
-details.d summary::-webkit-details-marker{display:none}
-.dn{font:700 1.7rem var(--disp);color:var(--acc);min-width:2.2ch}
-.dt{font-weight:700;line-height:1.3}.dd{font-size:.8rem;color:var(--mut);display:block;font-weight:400}
-.dbody{padding:0 18px 18px;font-size:.93rem}
-.stops{list-style:none;margin:.6rem 0;padding:0}
-.stops li{display:grid;grid-template-columns:64px 1fr auto;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
-.tm{font-size:.78rem;color:var(--mut);font-weight:700}.cs{font-size:.8rem;color:var(--mut)}
-.theme{color:var(--mut);font-style:italic}.note{background:var(--soft);padding:8px 12px;font-size:.88rem;border-left:3px solid var(--acc);margin:.5rem 0}
-.alt{font-size:.88rem;color:var(--mut)}
-.btn{display:inline-block;padding:.5rem 1rem;border:1px solid var(--acc);color:var(--acc);text-decoration:none;font-weight:700;font-size:.85rem;background:transparent;cursor:pointer;font-family:var(--sans)}
-.btn:hover{background:var(--acc);color:#fff}
-.hgrid,.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
-.hc{background:var(--card);border:1px solid var(--line)}
-.hc img,.hc .ph{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--soft)}
-.hc .b{padding:14px 16px 18px}
-.hc h4{font:600 1.25rem/1.2 var(--disp);margin:0 0 4px}
-.hc .tag{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
-.pc{position:relative;aspect-ratio:4/5;background:#223 center/cover;color:#fff;display:flex;align-items:flex-end;cursor:zoom-in;border:1px solid var(--line)}
-.pc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,#000C)}
-.pc div{position:relative;z-index:1;padding:16px}.pc h4{font:600 1.35rem/1.15 var(--disp);margin:0}.pc small{opacity:.85}
-.pc a{color:#fff}
-#lb{position:fixed;inset:0;background:#000D;display:none;place-items:center;z-index:200;cursor:zoom-out}
-#lb img{max-width:92vw;max-height:88vh}
-.bud{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:34px;align-items:start}
-label{display:block;font-size:.85rem;color:var(--mut);margin:0 0 14px}
-select,input[type=range]{width:100%;margin-top:4px;font:inherit;padding:6px;background:var(--card);color:var(--ink);border:1px solid var(--line)}
-.big{font:700 4.4rem/1 var(--disp);color:var(--acc)}
-.bar{display:flex;height:14px;margin:16px 0 10px}.bar i{display:block}
-.leg{display:grid;gap:4px;font-size:.88rem}.leg span{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line)}
-.gauge{margin-top:12px;padding:.5rem .8rem;font-weight:700}.ok{background:#1B7F4F22;color:#1B7F4F}.tight{background:#B7791F22;color:#B7791F}.over{background:#C5303022;color:#C53030}
-.qa{background:var(--card);border:1px solid var(--line);margin-bottom:12px}
-.qa summary{cursor:pointer;padding:16px 20px;font:600 1.35rem var(--disp)}
-.qa>div{padding:0 20px 18px}
-.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}.pillrow span{border:1px solid var(--line);padding:.15rem .8rem;border-radius:999px;font-size:.88rem}
-.ring{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:14px}
-.ck{list-style:none;padding:0;max-width:760px;margin:0 auto}
-.ck li{display:flex;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);cursor:pointer}
-.ck li.on{opacity:.45;text-decoration:line-through}
-.cred{max-width:760px;margin:0 auto}
-footer{text-align:center;color:var(--mut);padding:50px 16px 50px;font-size:.85rem}
-.iframe{width:100%;height:560px;border:1px solid var(--line);background:var(--soft)}
+@property --c{syntax:'<color>';inherits:true;initial-value:#6C8FD0}
+:root{--c:#6C8FD0;--bg:#0A0E14;--ink:#F2F5F8;--mut:#A3AEBB;--line:#ffffff26;--glass:#0C121Aa8;transition:--c .9s ease}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Bricolage Grotesque",system-ui,sans-serif;overflow-x:hidden}
+#map{position:fixed;inset:0;z-index:0;background:#10161e}
+#veil{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(120% 90% at 85% 50%,transparent 0%,#0A0E1488 60%,#0A0E14DD 100%)}
+#kanji{position:fixed;right:3vw;bottom:-2vh;z-index:1;pointer-events:none;font:900 clamp(7rem,24vw,22rem)/1 "Zen Old Mincho",serif;color:var(--c);opacity:.16;writing-mode:vertical-rl;transition:opacity .5s}
+#rail{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:7px}
+#rail button{all:unset;cursor:pointer;width:10px;height:10px;border-radius:50%;background:#ffffff40;position:relative;transition:transform .2s,background .2s}
+#rail button.on{background:var(--c);transform:scale(1.7)}
+#rail button:hover::after{content:attr(data-t);position:absolute;right:20px;top:-6px;white-space:nowrap;background:#000c;padding:2px 8px;border-radius:6px;font-size:12px}
+#top{position:fixed;left:0;right:0;top:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:12px 18px;pointer-events:none}
+#top b{font-weight:800;letter-spacing:.04em;pointer-events:auto}
+#top a{pointer-events:auto;color:var(--ink);text-decoration:none;font-size:13px;border:1px solid var(--line);padding:.3rem .8rem;border-radius:999px;background:#0008}
+.scene{position:relative;z-index:5;min-height:100vh;display:flex;align-items:center;padding:90px 5vw 90px}
+.card{width:min(500px,100%);background:var(--glass);backdrop-filter:blur(14px) saturate(1.2);border:1px solid var(--line);border-radius:22px;padding:26px 28px;box-shadow:0 20px 60px #0008;transform:translateY(34px);opacity:0;transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .7s}
+.scene.in .card{transform:none;opacity:1}
+.card.wide{width:min(900px,100%)}
+.k{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--c);font-weight:800}
+h1,h2,h3{margin:.15em 0;font-weight:800;line-height:1.05}
+h1{font-size:clamp(3rem,8vw,6rem)}h2{font-size:clamp(1.8rem,4vw,2.6rem)}h3{font-size:1.5rem}
+.lead{color:var(--mut);font-size:1.1rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.chip{border:1px solid var(--line);border-radius:999px;padding:.2rem .8rem;font-size:.85rem}
+.chip b{color:var(--c)}
+.stops{list-style:none;margin:12px 0 0;padding:0}
+.stops li{display:grid;grid-template-columns:54px 1fr auto;gap:10px;padding:9px 0;border-top:1px solid var(--line)}
+.tm{font-size:.78rem;color:var(--mut);font-weight:700}.cs{font-size:.8rem;color:var(--mut)}small{color:var(--mut)}
+.theme{color:var(--mut)}.note{background:#ffffff12;border-left:3px solid var(--c);padding:6px 10px;border-radius:6px;font-size:.9rem;margin:8px 0}.alt{color:var(--mut);font-size:.9rem}
+.btn{display:inline-block;background:var(--c);color:#0A0E14;text-decoration:none;font-weight:800;border-radius:999px;padding:.55rem 1.1rem;font-size:.9rem;border:0;cursor:pointer;font-family:inherit}
+.cover{height:150px;margin:-26px -28px 16px;border-radius:22px 22px 0 0;background:#223 center/cover}
+.hgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:14px}
+.h{background:#ffffff0d;border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:.88rem}
+.h img{width:100%;height:96px;object-fit:cover;display:block}.h div{padding:8px 10px}
+.pr{color:var(--c);font-weight:800}
+.fl{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;margin-top:12px}
+.fl img{width:120px;height:78px;object-fit:cover;border-radius:10px}
+label{display:block;color:var(--mut);margin:10px 0;font-size:.85rem}
+select,input[type=range]{width:100%;background:#ffffff12;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px;font:inherit}
+select option{color:#000}
+.big{font:800 4rem/1 "Bricolage Grotesque";color:var(--c)}
+.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;margin:12px 0}.bar i{display:block}
+.leg span{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);font-size:.9rem}
+.ck{list-style:none;margin:10px 0 0;padding:0}.ck li{display:flex;gap:10px;padding:9px 2px;border-bottom:1px solid var(--line);cursor:pointer}.ck li.on{opacity:.45;text-decoration:line-through}
+.hero-n{display:flex;gap:26px;flex-wrap:wrap;margin-top:22px}.hero-n b{display:block;font-size:2rem;color:var(--c)}
+.hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:var(--mut);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;animation:b 1.8s infinite}
+@keyframes b{50%{transform:translate(-50%,8px)}}
+@media (max-width:760px){.scene{align-items:flex-end;padding:90px 14px 40px}.card{padding:20px}.cover{margin:-20px -20px 14px}#rail{display:none}.card.wide{width:100%}}
+@media (prefers-reduced-motion:reduce){.card{transition:none;transform:none;opacity:1}}
 </style></head><body>
-<div id="prog"></div>
-<a href="../" style="position:fixed;top:10px;left:12px;z-index:200;background:#000a;color:#fff;padding:.3rem .7rem;border-radius:999px;font:700 12px system-ui;text-decoration:none">← Progetti</a>
-<header class="hero" id="hero"><div>
- <div class="kick">Dossier di viaggio · coppia · 1–15 febbraio 2027</div>
- <h1>Tokyo,<br>Kyoto, <em>Osaka</em></h1>
- <p>Quattordici notti d'inverno tra neve sul Fuji, templi silenziosi, onsen e i primi pruni in fiore. Tutto il viaggio su una mappa, giorno per giorno.</p>
- <div class="route"><span>Tokyo · 5 notti</span><span>Kawaguchiko · 1</span><span>Kyoto · 4</span><span>Osaka · 3</span></div>
- <div class="facts"><span><b>14</b>notti</span><span><b>ITA</b>volo diretto</span><span><b>2.500–3.000 €</b>budget a persona</span><span><b id="est">~2.860 €</b>stima realistica</span><span><b id="cd">—</b>alla partenza</span></div>
-</div></header>
-<nav id="links"><a href="#percorso">Percorso</a><a href="#citta">Giorni</a><a href="#voli">Voli</a><a href="#hotel">Hotel</a><a href="#luoghi">Luoghi</a><a href="#budget">Budget</a><a href="#extra">Extra</a><a href="#lista">Checklist</a><button id="theme" aria-label="Cambia tema">☾</button></nav>
-<main>
-<section id="percorso"><div class="head"><div class="kick">Percorso interattivo</div><h2>Il viaggio sulla mappa</h2><p>Scegliete una città o un giorno: la mappa si ferma sui luoghi della giornata e traccia il percorso. Toccate una tappa per centrarla.</p></div>
- <div class="chips" id="citytabs"></div><div class="chips daychips" id="daytabs"></div>
- <div class="mapgrid"><div id="map"></div><div class="panel" id="panel"></div></div>
- <h3 class="mid">Mappa CARTO: tappe, percorsi e zone hotel</h3>
- <iframe class="iframe" loading="lazy" title="Mappa CARTO del viaggio" src="https://gcp-europe-west1.app.carto.com/map/3f63679e-a7d3-40cd-818c-693f827f0de3" allowfullscreen></iframe>
- <p class="sub" style="text-align:center">Se la mappa non compare, <a href="https://gcp-europe-west1.app.carto.com/map/3f63679e-a7d3-40cd-818c-693f827f0de3" target="_blank" rel="noopener">aprila in una nuova scheda</a>.</p>
-</section>
-<section id="citta"><div class="head"><div class="kick">Giorno per giorno</div><h2>Le quattro tappe</h2><p>Aprite un giorno per vedere orari, costi e piani B. Ogni giorno ha il suo percorso su Google Maps.</p></div><div id="cities"></div></section>
-<section id="voli"><div class="head"><div class="kick">Volare</div><h2>Andata diretta con ITA</h2><p>Prezzi Kayak dell'8 ottobre 2026, a persona, due adulti. La tabella mostra come cambia il biglietto spostando la partenza di pochi giorni (sempre 14 notti).</p></div>
- <div class="two" id="fl"></div>
- <h3 class="mid">Cambiare data conviene?</h3>
- <div class="tbl"><table><thead><tr><th>Partenza → rientro</th><th>Con andata diretta ITA</th><th>Biglietto più economico</th><th>Differenza vs 1 feb</th></tr></thead><tbody id="ft"></tbody></table></div>
- <p class="sub" style="text-align:center;margin-top:12px">Il 6 febbraio è il Capodanno cinese: più folla e hotel più cari a Kyoto e Osaka. Il rientro del 15 parte alle 09:45.</p>
-</section>
-<section id="hotel"><div class="head"><div class="kick">Dormire</div><h2>Hotel scelti per le vostre date</h2><p>Prezzi totali per camera doppia, letti su Kayak l'8 ottobre 2026.</p></div><div class="chips" id="hfilter"></div><div class="hgrid" id="hotels"></div></section>
-<section id="luoghi"><div class="head"><div class="kick">Luoghi da vedere</div><h2>Galleria del viaggio</h2><p>I luoghi simbolo di ogni tappa. Cliccate una foto per ingrandirla.</p></div><div class="pgrid" id="places"></div></section>
-<section id="budget"><div class="head"><div class="kick">Conti</div><h2>Quanto costa davvero</h2><p>Cambiate voli, hotel e abitudini di spesa: il totale si aggiorna subito e dice se siete dentro i 2.500–3.000 €.</p></div><div class="bud"><div id="form"></div><div id="res"></div></div></section>
-<section id="extra"><div class="head"><div class="kick">Meno turistico e in più</div><h2>Quartieri da residenti e idee extra</h2><p>Consigli presi da blog di viaggio e di residenti. Molti sono già nel percorso.</p></div><div id="extras"></div></section>
-<section id="lista"><div class="head"><div class="kick">Prima di partire</div><h2>Checklist prenotazioni</h2></div><div class="ring"><b id="rt" style="font:700 1.4rem var(--disp)">0 di 12</b></div><ul class="ck" id="ck"></ul></section>
-<section><details class="qa cred"><summary>Crediti fotografici</summary><div><ul style="font-size:.85rem"><li>Airbus A350 ITA Airways a Haneda: <a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File:ITA_AIRWAYS_A350-941_EI-IFC_HND_RJTT_29-APR-2023_(52858743643).jpg">Steven Byles, CC BY-SA 2.0</a></li><li>Boeing 787-8 Qatar Airways: <a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File:Qatar_Airways_Boeing_787-8_Dreamliner_A7-BCA_MUC_2015_04.jpg">Julian Herzog, CC BY 4.0</a></li><li>Fushimi Inari Taisha: <a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File%3ATorii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg">Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg</a>, Basile Morin, CC BY-SA 4.0</li><li>Kiyomizu-dera: <a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File%3AKiyomizu-dera%2C_Kyoto%2C_November_2016_-01.jpg">Kiyomizu-dera, Kyoto, November 2016 -01.jpg</a>, Martin Falbisoner, CC BY-SA 4.0</li><li>Bosco di bambù di Arashiyama: <a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File%3ABamboo_Forest%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg">Bamboo Forest, Arashiyama, Kyoto, Japan.jpg</a>, Basile Morin, CC BY-SA 4.0</li><li>Sensō-ji: <a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File%3ASenso-ji_Kaminarimon_201503b.jpg">Senso-ji Kaminarimon 201503b.jpg</a>, Tak1701d, CC BY-SA 3.0</li><li>Shibuya: <a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File%3ATokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg">Tokyo Shibuya Scramble Crossing 2018-10-09.jpg</a>, Benh LIEU SONG (Flickr), CC BY-SA 2.0</li><li>Pagoda Chureito: <a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File%3AChureito_Pagoda_and_Mount_Fuji_2023-03-07.jpg">Chureito Pagoda and Mount Fuji 2023-03-07.jpg</a>, Stjepko Krehula, CC BY 4.0</li><li>Castello di Osaka: <a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File%3AOsaka_Castle_Outer_Moat_and_Osaka_Business_Park%2C_November_2016.jpg">Osaka Castle Outer Moat and Osaka Business Park, November 2016.jpg</a>, Martin Falbisoner, CC BY-SA 4.0</li><li>Tōdai-ji: <a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File%3AThe_Great_Buddha_Hall_of_T%C5%8Ddai-ji%2C_Nara%2C_November_2016.jpg">The Great Buddha Hall of Tōdai-ji, Nara, November 2016.jpg</a>, Martin Falbisoner, CC BY-SA 4.0</li><li>Hamacho Hotel Tokyo Nihonbashi: immagine dal <a target="_blank" rel="noopener" href="https://hamachohotel.jp/en/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Super Hotel Ueno-Okachimachi: immagine dal <a target="_blank" rel="noopener" href="https://www.superhoteljapan.com/en/s-hotels/okachimachi/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Mitsui Garden Hotel Otemachi: immagine dal <a target="_blank" rel="noopener" href="https://www.gardenhotels.co.jp/otemachi/eng/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Hotel Forza Kyoto Shijo Kawaramachi: immagine dal <a target="_blank" rel="noopener" href="https://www.hotelforza.jp/kyotoshijo/en/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Hotel Musse Kyoto Shijo Kawaramachi Meitetsu: immagine dal <a target="_blank" rel="noopener" href="https://www.m-inn.com/musse/kyoto/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Hotel Emion Kyoto: immagine dal <a target="_blank" rel="noopener" href="https://www.hotel-emion.jp/kyoto/english/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Gion Ryokan Karaku: immagine dal <a target="_blank" rel="noopener" href="https://www.gion-karaku.com/en-top">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Daiwa Roynet Hotel Osaka Kitahama: immagine dal <a target="_blank" rel="noopener" href="https://www.daiwaroynet.jp/en/osaka-kitahama/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Hotel Vischio Osaka: immagine dal <a target="_blank" rel="noopener" href="https://www.hotelvischio-osaka.com/en/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Mitsui Garden Hotel Kyoto Station: immagine dal <a target="_blank" rel="noopener" href="https://www.gardenhotels.co.jp/kyoto-station/eng/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Hotel Gracery Osaka Namba: immagine dal <a target="_blank" rel="noopener" href="https://gracery.com/namba/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Hotel Crown Hills Ueno Premier: immagine dal <a target="_blank" rel="noopener" href="https://breezbay-group.com/hl-ueno/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li><li>Four Points Flex by Sheraton Osaka Kitahama: immagine dal <a target="_blank" rel="noopener" href="https://www.marriott.com/en-us/hotels/osaku-four-points-flex-osaka-kitahama/photos/">sito ufficiale</a> (©, uso illustrativo per la pianificazione)</li></ul></div></details></section>
-</main>
-<div id="lb"><img alt=""></div>
-<footer>Prezzi indicativi, da verificare alla prenotazione. Foto: Wikimedia Commons (licenze CC) e siti ufficiali degli hotel.</footer>
+<div id="map"></div><div id="veil"></div><div id="kanji">東京</div>
+<div id="top"><b>旅 Giappone 2027</b><a href="../">← Progetti</a></div>
+<div id="rail"></div>
+<main id="scenes"></main>
 <script>/* @preserve
  * Leaflet 1.9.4, a JS library for interactive maps. https://leafletjs.com
  * (c) 2010-2023 Vladimir Agafonkin, (c) 2010-2011 CloudMade
@@ -1583,89 +1501,81 @@ function dayHtml(d,withLink){
 }
 
 (function(){
-var root=document.documentElement,tb=$('theme');
-try{var t=localStorage.getItem('theme1');if(t)root.setAttribute('data-theme',t);}catch(e){}
-function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches;}
-function syncTheme(){tb.textContent=isDark()?'☀':'☾';}
-tb.onclick=function(){var n=isDark()?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('theme1',n);}catch(e){}syncTheme();};syncTheme();
-addEventListener('scroll',function(){var h=document.documentElement;$('prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
-var secs=[].slice.call(document.querySelectorAll('main section[id]')),ls=[].slice.call(document.querySelectorAll('#links a'));
-var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)ls.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});});},{rootMargin:'-40% 0px -55% 0px'});secs.forEach(function(s){spy.observe(s);});
-$('hero').style.backgroundImage='url('+IMG['places/fushimi']+')';
-var dd=Math.ceil((new Date(2027,1,1)-new Date())/864e5);$('cd').textContent=dd>0?dd+' giorni':'Si parte';
-
-/* mappa interattiva */
-var map=mkMap('map',{wheel:false,dark:false}),curDay=null;
-var CT=[['all','Tutto il viaggio'],['tokyo','Tokyo'],['fuji','Fuji'],['kyoto','Kyoto'],['osaka','Osaka e Nara']];
-var BN={tokyo:[[35.64,139.63],[35.75,139.84]],fuji:[[35.1,138.6],[35.55,139.0]],kyoto:[[34.93,135.66],[35.14,135.86]],osaka:[[34.4,135.2],[34.75,135.9]]};
-$('citytabs').innerHTML=CT.map(function(c){return '<button data-c="'+c[0]+'">'+c[1]+'</button>';}).join('');
-$('daytabs').innerHTML=DAYS.map(function(d,i){return '<button data-d="'+i+'" style="--c:'+CC[d.city]+'"><small style="display:block;font-weight:400;color:inherit;opacity:.7">'+esc(d.date)+'</small>G'+d.n+'</button>';}).join('');
-function overview(c){curDay=null;
-  [].forEach.call($('citytabs').children,function(b){b.classList.toggle('on',b.dataset.c===c);});[].forEach.call($('daytabs').children,function(b){b.classList.remove('on');});
-  var g=map._layer;g.clearLayers();
-  DAYS.forEach(function(d){if(c!=='all'&&d.city!==c)return;d.items.forEach(function(it){if(it.c)L.circleMarker(it.c,{radius:7,color:'#fff',weight:2,fillColor:CC[d.city],fillOpacity:.95}).bindPopup('<b>'+esc(it.t)+'</b><br>'+esc(it.time)+'<br><a target="_blank" rel="noopener" href="'+gsearch(it.t)+'">Google Maps</a>').addTo(g);});});
-  Object.keys(ROUTES).forEach(function(k){var d=DAYS[+k-1];if(!d||(c!=='all'&&d.city!==c))return;L.polyline(ROUTES[k].pts,{color:CC[d.city],weight:3,opacity:.65}).bindTooltip('Giorno '+k+': '+esc(ROUTES[k].label)).addTo(g);});
-  ZONES.forEach(function(z){if(c!=='all'&&z[3]!==c)return;L.circle([z[1],z[2]],{radius:z[4],color:CC[z[3]],weight:2,dashArray:'5 5',fillOpacity:.18}).bindTooltip('Hotel: '+z[0]).addTo(g);});
-  map.flyToBounds(c==='all'?[[34.4,135.2],[35.8,139.9]]:BN[c],{duration:.7,padding:[20,20]});
-  $('panel').innerHTML='<div class="kick" style="color:var(--acc)">Panoramica</div><h3>'+(c==='all'?'Tutto il percorso':CITY[c])+'</h3><p class="theme">Scegliete un giorno qui sopra per vedere tappe, orari e costi. I cerchi tratteggiati sono le zone dove cercare l\'hotel.</p>'+
-   DAYS.filter(function(d){return c==='all'||d.city===c;}).map(function(d){return '<div class="stop has" data-g="'+(d.n-1)+'"><span class="tm">G'+d.n+'</span><span><b>'+esc(d.title)+'</b><br><small class="sub">'+esc(d.date)+'</small></span><span class="cs">'+esc(d.cost)+'</span></div>';}).join('');}
-function selDay(i){curDay=i;var d=DAYS[i];
-  [].forEach.call($('citytabs').children,function(b){b.classList.remove('on');});[].forEach.call($('daytabs').children,function(b,k){b.classList.toggle('on',k===i);});
-  drawDay(map,d);var n=0,r=ROUTES[d.n];
-  var h='<div class="kick" style="color:'+CC[d.city]+'">Giorno '+d.n+' · '+esc(d.date)+'</div><h3>'+esc(d.title)+'</h3><div class="sub">Spesa stimata '+esc(d.cost)+' a persona</div>';
-  if(d.theme)h+='<p class="theme">'+esc(d.theme)+'</p>';
-  d.notes.forEach(function(x){h+='<div class="note">'+esc(x)+'</div>';});
-  if(r)h+='<div class="note"><b>Percorso</b> '+esc(r.label)+': circa '+r.km+' km, '+r.min+' min in auto. Indicativo: in città si usano treni e metro.</div>';
-  d.items.forEach(function(it,k){var num=it.c?(++n):0;h+='<div class="stop'+(it.c?' has':'')+'" data-k="'+k+'"><span class="tm">'+esc(it.time)+'</span><span>'+(num?'<span class="no">'+num+'</span>':'')+'<b>'+esc(it.t)+'</b>'+(it.d?'<br><small class="sub">'+esc(it.d)+'</small>':'')+'</span><span class="cs">'+esc(it.cost||'')+'</span></div>';});
-  (d.alts||[]).forEach(function(a){h+='<p class="alt"><b>'+esc(a.label)+'</b> '+esc(a.text)+'</p>';});
-  var u=dayLink(d);if(u)h+='<p style="text-align:center;margin:14px 0 0"><a class="btn" target="_blank" rel="noopener" href="'+u+'">Apri in Google Maps</a></p>';
-  $('panel').innerHTML=h;}
-$('citytabs').onclick=function(e){var b=e.target.closest('button');if(b)overview(b.dataset.c);};
-$('daytabs').onclick=function(e){var b=e.target.closest('button');if(b)selDay(+b.dataset.d);};
-$('panel').onclick=function(e){var g=e.target.closest('[data-g]');if(g){selDay(+g.dataset.g);return;}
-  var s=e.target.closest('.stop.has[data-k]');if(s&&curDay!==null){var it=DAYS[curDay].items[+s.dataset.k];if(it&&it.c)map.flyTo(it.c,16,{duration:.6});}};
-overview('all');
-
-/* giorni per citta */
+var KJ={tokyo:'東京',fuji:'富士',kyoto:'京都',osaka:'大阪'};
 var cov={tokyo:'places/shibuya-sky',fuji:'places/chureito',kyoto:'places/kiyomizu',osaka:'places/osaka-castle'};
-$('cities').innerHTML=['tokyo','fuji','kyoto','osaka'].map(function(c){var ds=DAYS.filter(function(d){return d.city===c;});
-  return '<article class="city"><div class="cover" style="background-image:url('+IMG[cov[c]]+')"><div><span>Giorni '+ds[0].n+'–'+ds[ds.length-1].n+'</span><h3>'+CITY[c]+'</h3></div></div><div class="days">'+ds.map(function(d){
-   return '<details class="d"><summary><span class="dn">'+d.n+'</span><span class="dt">'+esc(d.title)+'<span class="dd">'+esc(d.date)+' · '+esc(d.cost)+'</span></span></summary><div class="dbody">'+dayHtml(d)+'</div></details>';}).join('')+'</div></article>';}).join('');
-
-/* voli */
-$('fl').innerHTML=FL.map(function(f){return '<figure class="fl"><img alt="" src="'+IMG[f.img]+'"><figcaption><span class="sub">'+esc(f.tag)+'</span><h3>'+esc(f.n)+'</h3><div class="pr">'+esc(f.p)+' <small class="sub">'+esc(f.e)+' a persona</small></div><div class="sub">Andata: '+esc(f.a)+'</div><div class="sub">Ritorno: '+esc(f.b)+'</div></figcaption></figure>';}).join('');
-$('ft').innerHTML=FT.map(function(r){var d=r[1]-1335;return '<tr class="'+(r[3]?'pick':'')+'"><td>'+esc(r[0])+(r[3]?' · scelta':'')+'</td><td class="n">$'+r[1].toLocaleString('it-IT')+'</td><td class="n">$'+r[2]+'</td><td class="n">'+(d===0?'—':(d>0?'+':'−')+'$'+Math.abs(d))+'</td></tr>';}).join('');
-
-/* hotel */
-var hc='all';
-$('hfilter').innerHTML=[['all','Tutti'],['Tokyo','Tokyo'],['Kyoto','Kyoto'],['Osaka','Osaka']].map(function(c){return '<button data-c="'+c[0]+'">'+c[1]+'</button>';}).join('');
-function hot(){[].forEach.call($('hfilter').children,function(b){b.classList.toggle('on',b.dataset.c===hc);});
-  $('hotels').innerHTML=H.filter(function(h){return hc==='all'||h[8]===hc;}).map(function(h){var im=IMG['hotels/'+h[1]];return '<article class="hc">'+(im?'<img alt="" loading="lazy" src="'+im+'">':'<div class="ph"></div>')+'<div class="b"><div class="tag">'+esc(h[8])+' · '+esc(h[3])+' · voto '+h[4]+'</div><h4>'+esc(h[2])+'</h4><p class="sub">'+esc(h[7])+'</p><span class="pr" style="font-size:1.4rem">$'+h[5]+'</span> <span class="sub">'+h[6]+' notti</span><br><a href="'+gsearch(h[2]+' '+h[8])+'" target="_blank" rel="noopener" class="sub">Mappa</a> · <a href="https://www.google.com/search?tbm=isch&q='+encodeURIComponent(h[2]+' '+h[8])+'" target="_blank" rel="noopener" class="sub">Foto</a></div></article>';}).join('');}
-$('hfilter').onclick=function(e){var b=e.target.closest('button');if(b){hc=b.dataset.c;hot();}};hot();
-
-/* luoghi */
-$('places').innerHTML=P.map(function(p){var im=IMG['places/'+p[0]];return '<article class="pc" data-i="'+p[0]+'" style="background-image:url('+im+')"><div><small>'+esc(p[2])+'</small><h4>'+esc(p[1])+'</h4><small>'+esc(p[3])+'</small><br><a target="_blank" rel="noopener" href="'+gsearch(p[4])+'" onclick="event.stopPropagation()">Mappa</a></div></article>';}).join('');
-$('places').onclick=function(e){var c=e.target.closest('.pc');if(!c)return;$('lb').querySelector('img').src=IMG['places/'+c.dataset.i];$('lb').style.display='grid';};
-$('lb').onclick=function(){$('lb').style.display='none';};
-
+var map=L.map('map',{zoomControl:false,scrollWheelZoom:false,dragging:false,doubleClickZoom:false,touchZoom:false,keyboard:false,attributionControl:true}).setView([39,100],3);
+var tp=0,terr=0,tl;
+var DK=['https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}','https://tile.openstreetmap.org/{z}/{x}/{y}.png'];
+function tiles(){if(tl)map.removeLayer(tl);tl=L.tileLayer(DK[tp],{maxZoom:tp?19:16,attribution:tp?'© OpenStreetMap':'Tiles © Esri'});tl.on('tileerror',function(){terr++;if(terr===4&&tp<DK.length-1){tp++;terr=0;tiles();}});tl.addTo(map);if(!tp){if(window._ref)map.removeLayer(window._ref);window._ref=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,opacity:.9}).addTo(map);}if(tp)document.getElementById('map').style.filter='invert(1) hue-rotate(180deg) brightness(.8)';}
+tiles();
+var lay=L.layerGroup().addTo(map),anim=0;
+var wide=function(){return innerWidth>760;};
+function pad(){return wide()?{paddingTopLeft:[Math.min(560,innerWidth*.42),70],paddingBottomRight:[70,70]}:{paddingTopLeft:[20,60],paddingBottomRight:[20,Math.round(innerHeight*.55)]};}
+function dens(pts,n){var o=[];for(var i=0;i<pts.length-1;i++){for(var k=0;k<n;k++){o.push([pts[i][0]+(pts[i+1][0]-pts[i][0])*k/n,pts[i][1]+(pts[i+1][1]-pts[i][1])*k/n]);}}o.push(pts[pts.length-1]);return o;}
+function drawLine(pts,color,w){var id=++anim,full=dens(pts,10),pl=L.polyline([],{color:color,weight:w||4,opacity:.95,lineCap:'round'}).addTo(lay),i=0,t0=null,dur=Math.min(2600,900+full.length*8);
+  function step(ts){if(id!==anim)return;if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur);i=Math.floor(p*full.length);pl.setLatLngs(full.slice(0,Math.max(2,i)));if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
+function icon(n,c){return L.divIcon({className:'',html:'<div style="width:28px;height:28px;border-radius:50%;background:'+c+';color:#0A0E14;border:2px solid #fff;font:800 13px/24px system-ui;text-align:center;box-shadow:0 0 0 6px '+c+'40">'+n+'</div>',iconSize:[28,28],iconAnchor:[14,14]});}
+function arc(a,b,n){var o=[],m=[(a[0]+b[0])/2+14,(a[1]+b[1])/2];for(var i=0;i<=n;i++){var t=i/n;o.push([(1-t)*(1-t)*a[0]+2*(1-t)*t*m[0]+t*t*b[0],(1-t)*(1-t)*a[1]+2*(1-t)*t*m[1]+t*t*b[1]]);}return o;}
+var ROME=[41.8,12.25],TKY=[35.55,139.78],KIX=[34.43,135.23];
+var VIEW={
+ intro:function(){lay.clearLayers();map.flyTo([36,95],3,{duration:1.6});},
+ flight:function(){lay.clearLayers();var a=arc(ROME,TKY,60);L.circleMarker(ROME,{radius:6,color:'#fff',fillColor:'#E58BAA',fillOpacity:1}).addTo(lay);L.circleMarker(TKY,{radius:6,color:'#fff',fillColor:'#E58BAA',fillOpacity:1}).addTo(lay);
+   map.flyToBounds([ROME,TKY],Object.assign({duration:1.6},pad()));drawLine(a,'#E58BAA',3);},
+ day:function(d){lay.clearLayers();var pts=[],n=0,c=CC[d.city];
+   d.items.forEach(function(it){if(it.c){n++;pts.push(it.c);L.marker(it.c,{icon:icon(n,c)}).bindTooltip(esc(it.t)).addTo(lay);}});
+   var r=ROUTES[d.n],all=pts.slice();if(r){r.pts.forEach(function(p){all.push(p);});}
+   ZONES.forEach(function(z){var ins=all.some(function(p){var dx=(p[0]-z[1])*111000,dy=(p[1]-z[2])*91000;return Math.sqrt(dx*dx+dy*dy)<z[4]+300;});if(ins)L.circle([z[1],z[2]],{radius:z[4],color:CC[z[3]],weight:2,dashArray:'5 5',fillOpacity:.2}).bindTooltip('Hotel: '+z[0]).addTo(lay);});
+   if(all.length>1)map.flyToBounds(all,Object.assign({duration:1.4,maxZoom:15},pad()));else if(all.length===1)map.flyTo(all[0],14,{duration:1.2});
+   if(r)drawLine(r.pts,c,4);else if(pts.length>1)drawLine(pts,c,3);},
+ all:function(){lay.clearLayers();Object.keys(ROUTES).forEach(function(k){var d=DAYS[+k-1];if(d)L.polyline(ROUTES[k].pts,{color:CC[d.city],weight:3,opacity:.75}).addTo(lay);});map.flyToBounds([[34.4,135.2],[35.8,139.9]],Object.assign({duration:1.6},pad()));}
+};
+/* scene */
+var S=[],h='',rail='';
+function sc(id,city,label,inner,kind,arg,wideCard){S.push({id:id,city:city,kind:kind,arg:arg,label:label});h+='<section class="scene" id="'+id+'" data-s="'+(S.length-1)+'"><div class="card'+(wideCard?' wide':'')+'">'+inner+'</div></section>';}
+var dd=Math.ceil((new Date(2027,1,1)-new Date())/864e5);
+sc('s0','tokyo','Inizio','<div class="k">Dossier di viaggio · 1–15 febbraio 2027</div><h1>Tokyo<br>Kyoto<br>Osaka</h1><p class="lead">Quattordici notti d\'inverno tra neve sul Fuji, templi, onsen e primi pruni in fiore. Scorrete: la mappa vi porta giorno per giorno.</p><div class="hero-n"><span><b>14</b>notti</span><span><b>'+(dd>0?dd:0)+'</b>giorni alla partenza</span><span><b id="est">~2.860 €</b>a persona</span></div>','intro');
+var f0=FL[0],f1=FL[1];
+sc('s1','tokyo','Voli','<div class="k">Volare</div><h2>Andata diretta con ITA</h2><p class="lead">Roma Fiumicino → Tokyo Haneda in 12h15.</p>'+FL.map(function(f){return '<div class="fl"><img alt="" src="'+IMG[f.img]+'"><div><b>'+esc(f.n)+'</b><br><span class="pr">'+esc(f.p)+'</span> <small>'+esc(f.e)+' a persona</small><br><small>Andata: '+esc(f.a)+'<br>Ritorno: '+esc(f.b)+'</small></div></div>';}).join('')+'<p class="note">Il 6 febbraio è il Capodanno cinese: più folla e hotel più cari. Il rientro del 15 parte alle 09:45.</p>','flight');
+var lastCity='';
+DAYS.forEach(function(d,i){
+  if(d.city!==lastCity){lastCity=d.city;var hs=H.filter(function(x){return x[8].toLowerCase()===d.city||(d.city==='osaka'&&x[8]==='Osaka');});
+    sc('c'+d.city,d.city,CITY[d.city],'<div class="cover" style="background-image:url('+IMG[cov[d.city]]+')"></div><div class="k">'+CITY[d.city]+'</div><h2>'+(KJ[d.city])+' · '+DAYS.filter(function(x){return x.city===d.city;}).length+' giorni</h2>'+(hs.length?'<p class="lead">Dove dormire</p><div class="hgrid">'+hs.slice(0,4).map(function(x){var im=IMG['hotels/'+x[1]];return '<div class="h">'+(im?'<img alt="" src="'+im+'">':'')+'<div><b>'+esc(x[2].replace(/ \(.*/,''))+'</b><br><small>'+esc(x[3])+' · voto '+x[4]+'</small><br><span class="pr">$'+x[5]+'</span> <small>'+x[6]+' notti</small></div></div>';}).join('')+'</div>':'<p class="lead">Una notte con vista sul Fuji, onsen e cena in ryokan.</p>'),'all');}
+  var ds=dayLink(d);
+  var body='<div class="k">Giorno '+d.n+' · '+esc(d.date)+'</div><h2>'+esc(d.title)+'</h2><div class="chips"><span class="chip">Spesa <b>'+esc(d.cost)+'</b></span>'+(ROUTES[d.n]?'<span class="chip"><b>'+ROUTES[d.n].km+'</b> km · <b>'+ROUTES[d.n].min+'</b> min</span>':'')+'</div>';
+  if(d.theme)body+='<p class="theme">'+esc(d.theme)+'</p>';
+  d.notes.forEach(function(n){body+='<div class="note">'+esc(n)+'</div>';});
+  body+='<ul class="stops">'+d.items.map(function(it){return '<li><span class="tm">'+esc(it.time)+'</span><span><b>'+esc(it.t)+'</b>'+(it.d?'<br><small>'+esc(it.d)+'</small>':'')+'</span><span class="cs">'+esc(it.cost||'')+'</span></li>';}).join('')+'</ul>';
+  (d.alts||[]).forEach(function(a){body+='<p class="alt"><b>'+esc(a.label)+'</b> '+esc(a.text)+'</p>';});
+  if(ds)body+='<p><a class="btn" target="_blank" rel="noopener" href="'+ds+'">Apri in Google Maps</a></p>';
+  sc('d'+d.n,d.city,'G'+d.n+' · '+d.date,body,'day',d);
+});
+var sel={};Object.keys(OPT).forEach(function(k){sel[k]=DEF[k];});
+sc('bud','osaka','Budget','<div class="k">Conti</div><h2>Quanto costa davvero</h2><div id="bres"></div><div id="bform"></div>','all',null,true);
+sc('lst','osaka','Checklist','<div class="k">Prima di partire</div><h2>Checklist prenotazioni</h2><ul class="ck" id="ck"></ul><p class="note">Foto: Wikimedia Commons (licenze CC) e siti ufficiali degli hotel. Prezzi indicativi, da verificare.</p>','all');
+document.getElementById('scenes').innerHTML=h;
+var scenes=[].slice.call(document.querySelectorAll('.scene'));
+document.getElementById('rail').innerHTML=S.map(function(s,i){return '<button data-i="'+i+'" data-t="'+esc(s.label)+'" aria-label="'+esc(s.label)+'"></button>';}).join('');
+document.getElementById('rail').onclick=function(e){var b=e.target.closest('button');if(b)scenes[+b.dataset.i].scrollIntoView({behavior:'smooth',block:'center'});};
+var cur=-1;
+function act(i){if(i===cur)return;cur=i;var s=S[i];document.documentElement.style.setProperty('--c',s.city==='tokyo'&&s.kind==='intro'?'#6C8FD0':(s.kind==='flight'?'#E58BAA':CC[s.city]));
+  document.getElementById('kanji').textContent=s.kind==='intro'||s.kind==='flight'?'旅':KJ[s.city];
+  [].forEach.call(document.getElementById('rail').children,function(b,k){b.classList.toggle('on',k===i);});
+  var v=VIEW[s.kind];if(s.kind==='day')v(s.arg);else v();}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');act(+e.target.dataset.s);}});},{rootMargin:'-35% 0px -45% 0px',threshold:0});
+scenes.forEach(function(s){io.observe(s);});
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.05});scenes.forEach(function(s){io2.observe(s);});
 /* budget */
-var f='';Object.keys(OPT).forEach(function(k){f+='<label>'+LAB[k]+'<select id="s_'+k+'">'+OPT[k].map(function(o,i){return '<option value="'+i+'"'+(i===DEF[k]?' selected':'')+'>'+o[0]+' · '+eur(o[1])+'</option>';}).join('')+'</select></label>';});
-f+='<label>Cibo al giorno a persona: <output id="of">33</output> €<input type="range" id="rf" min="22" max="50" value="33"></label><label>Ingressi e attività, totale a persona: <output id="oa">125</output> €<input type="range" id="ra" min="60" max="220" step="5" value="125"></label><label>Shopping e souvenir a persona: <output id="os">0</output> €<input type="range" id="rs" min="0" max="500" step="25" value="0"></label>';
-$('form').innerHTML=f;
-function calc(){var sel={};Object.keys(OPT).forEach(function(k){sel[k]=+$('s_'+k).value;});
-  var fo=+$('rf').value,ac=+$('ra').value,sh=+$('rs').value;$('of').textContent=fo;$('oa').textContent=ac;$('os').textContent=sh;
-  var b=budgetCalc(sel,fo,ac,sh),cl=b.tot<=2850?'ok':(b.tot<=3000?'tight':'over'),ms=b.tot<=2850?'Dentro il budget, con margine':(b.tot<=3000?'Dentro il tetto di 3.000 €, ma al limite':'Oltre il tetto di 3.000 € per persona');
-  $('res').innerHTML='<div class="sub">Totale a persona</div><div class="big">'+eur(b.tot)+'</div><div class="sub">Coppia: '+eur(b.tot*2)+'</div><div class="bar">'+b.parts.map(function(p,i){return '<i style="width:'+p/b.tot*100+'%;background:'+BCAT[i][1]+'"></i>';}).join('')+'</div><div class="leg">'+b.parts.map(function(p,i){return '<span><span>'+BCAT[i][0]+'</span><b>'+eur(p)+'</b></span>';}).join('')+'</div><div class="gauge '+cl+'">'+ms+'</div>';
-  if(!window.__s){$('est').textContent='~'+Math.round(b.tot).toLocaleString('it-IT')+' €';window.__s=1;}}
-$('form').addEventListener('input',calc);calc();
-
-/* extra */
-$('extras').innerHTML=X.map(function(x,i){return '<details class="qa"'+(i===0?' open':'')+'><summary>'+esc(x[0])+'</summary><div><div class="pillrow">'+x[1].map(function(p){return '<span>'+esc(p)+'</span>';}).join('')+'</div><p>'+esc(x[2])+'</p></div></details>';}).join('');
-
-/* checklist */
-var st={};try{st=JSON.parse(localStorage.getItem('ck1b')||'{}');}catch(e){}
-function ckr(){var n=CK.filter(function(_,i){return st[i];}).length;$('rt').textContent=n+' di '+CK.length;
-  $('ck').innerHTML=CK.map(function(t,i){return '<li data-i="'+i+'" class="'+(st[i]?'on':'')+'"><span>'+(st[i]?'☑':'☐')+'</span><span>'+esc(t)+'</span></li>';}).join('');}
-$('ck').onclick=function(e){var li=e.target.closest('li');if(!li)return;var i=li.dataset.i;st[i]=!st[i];try{localStorage.setItem('ck1b',JSON.stringify(st));}catch(x){}ckr();};ckr();
+var food=33,act2=125,shop=0;
+function bud(){var b=budgetCalc(sel,food,act2,shop);document.getElementById('est').textContent='~'+Math.round(b.tot).toLocaleString('it-IT')+' €';
+  var cl=b.tot<=2850?'Dentro il budget, con margine':(b.tot<=3000?'Dentro il tetto di 3.000 €, ma al limite':'Oltre il tetto di 3.000 € a persona');
+  document.getElementById('bres').innerHTML='<div class="big">'+eur(b.tot)+'</div><small>a persona · coppia '+eur(b.tot*2)+'</small><div class="bar">'+b.parts.map(function(p,i){return '<i style="width:'+p/b.tot*100+'%;background:'+BCAT[i][1]+'"></i>';}).join('')+'</div><div class="leg">'+b.parts.map(function(p,i){return '<span><span>'+BCAT[i][0]+'</span><b>'+eur(p)+'</b></span>';}).join('')+'</div><p class="note">'+cl+'</p>';}
+document.getElementById('bform').innerHTML=Object.keys(OPT).map(function(k){return '<label>'+LAB[k]+'<select data-k="'+k+'">'+OPT[k].map(function(o,i){return '<option value="'+i+'"'+(i===sel[k]?' selected':'')+'>'+o[0]+' · '+eur(o[1])+'</option>';}).join('')+'</select></label>';}).join('')+
+ '<label>Cibo al giorno a persona <output id="of">33</output> €<input type="range" data-r="f" min="22" max="50" value="33"></label><label>Ingressi e attività <output id="oa">125</output> €<input type="range" data-r="a" min="60" max="220" step="5" value="125"></label><label>Shopping <output id="os">0</output> €<input type="range" data-r="s" min="0" max="500" step="25" value="0"></label>';
+document.getElementById('bform').addEventListener('input',function(e){var t=e.target;if(t.dataset.k)sel[t.dataset.k]=+t.value;else{var v=+t.value;if(t.dataset.r==='f'){food=v;document.getElementById('of').textContent=v;}if(t.dataset.r==='a'){act2=v;document.getElementById('oa').textContent=v;}if(t.dataset.r==='s'){shop=v;document.getElementById('os').textContent=v;}}bud();});
+bud();
+var st={};try{st=JSON.parse(localStorage.getItem('ck6')||'{}');}catch(e){}
+function ckr(){document.getElementById('ck').innerHTML=CK.map(function(t,i){return '<li data-i="'+i+'" class="'+(st[i]?'on':'')+'"><span>'+(st[i]?'☑':'☐')+'</span><span>'+esc(t)+'</span></li>';}).join('');}
+document.getElementById('ck').onclick=function(e){var li=e.target.closest('li');if(!li)return;var i=li.dataset.i;st[i]=!st[i];try{localStorage.setItem('ck6',JSON.stringify(st));}catch(x){}ckr();};ckr();
+act(0);
 })();
 </script></body></html>
