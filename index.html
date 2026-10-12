@@ -21,7 +21,7 @@ h1 mark{background:var(--y);color:var(--k);padding:0 .1em;border-radius:8px;-web
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .btn{display:inline-block;padding:.75rem 1.2rem;border:4px solid var(--k);border-radius:14px;font:700 .95rem "Space Mono";text-transform:uppercase;text-decoration:none;background:var(--y);color:var(--k);box-shadow:5px 5px 0 var(--r);transition:transform .12s,box-shadow .12s}
 .btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--r)}.btn.w{background:var(--w);box-shadow:5px 5px 0 var(--b)}
-.id{grid-column:span 4;background:var(--r);color:#fff;display:grid;place-items:center;text-align:center}
+a.id,.id{grid-column:span 4;background:var(--r);color:#fff;display:grid;place-items:center;text-align:center}
 .id .mono{font:400 6.5rem/1 "Archivo Black";color:var(--y);-webkit-text-stroke:3px var(--k)}.id small{font:700 .85rem "Space Mono";text-transform:uppercase}
 .stat{grid-column:span 3}.stat b{display:block;font:400 3.6rem/1 "Archivo Black"}.stat span{font-weight:500}
 .s1{background:var(--b);color:#fff}.s2{background:var(--g)}.s3{background:var(--p)}.s4{background:var(--w)}
@@ -49,14 +49,14 @@ footer{text-align:center;font:700 .8rem "Space Mono";text-transform:uppercase;pa
 @media (prefers-reduced-motion:reduce){.t,.btn{transition:none}}
 </style></head><body>
 <div class="wrap">
- <nav><span id="nm"></span><span><a href="#cosa">Cosa so fare</a><a href="#progetti">Progetti</a><a href="#cv">Curriculum</a><a id="li0" href="#" target="_blank" rel="noopener">LinkedIn</a></span></nav>
+ <nav><span id="nm"></span><span><a href="#progetti">Progetti</a><a href="#cosa">Cosa so fare</a><a href="#cv">Curriculum</a><a id="li0" href="#" target="_blank" rel="noopener">LinkedIn</a></span></nav>
  <div class="bento">
   <div class="t hero"><span class="l" id="role"></span><h1 id="h1"></h1><p id="sub"></p><div class="btns"><a class="btn" href="#progetti">Vedi i progetti</a><a class="btn w" id="li1" href="#" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
-  <div class="t id"><div><div class="mono">MD</div><small id="hd"></small></div></div>
+  <a class="t id" id="idbox" href="#" target="_blank" rel="noopener" aria-label="Apri il profilo LinkedIn di Matteo Donati" style="color:#fff;text-decoration:none"><div><div class="mono">MD</div><small id="hd"></small></div></a>
   <div id="stats" style="display:contents"></div>
   <div class="t about" id="about"></div>
-  <div class="h" id="cosa">Cosa so fare</div><div id="skills" style="display:contents"></div>
   <div class="h" id="progetti">Progetti</div><div id="proj" style="display:contents"></div>
+  <div class="h" id="cosa">Cosa so fare</div><div id="skills" style="display:contents"></div>
   <div class="h" id="cv">Curriculum</div>
   <div class="t cv" id="tl"></div>
   <div class="side"><div class="t"><h4>Formazione</h4><div id="tr"></div></div><div class="t"><h4>Lingue e strumenti</h4><div id="lg"></div><div class="tags" id="tools" style="margin-top:12px"></div><h4 style="margin-top:18px">Fuori dal lavoro</h4><div class="tags" id="also"></div></div></div>
@@ -92,6 +92,7 @@ var P = {
   projects: [
     {t: 'Giappone 2027', d: 'Quattordici notti tra Tokyo, Kyoto e Osaka: una mappa che scorre, disegna i percorsi giorno per giorno e tiene insieme voli, hotel e budget.', href: 'giappone/', tag: 'Viaggio · mappe', img: 'jp'},
     {t: 'PreventivoPDF', d: 'Preventivi, proforma e ricevute in PDF in un minuto: gratis, dal browser e senza account. Con i calcoli fiscali italiani già fatti.', href: 'preventivopdf/', tag: 'Strumento · web app', img: 'pp'},
+    {t: 'Finanza Personale', d: 'Conti, movimenti, budget e investimenti in un’unica app, con previsioni e obiettivi. Questa è la demo: dati di fantasia, nessun accesso.', href: 'finanza-personale/', tag: 'Demo · finanza personale', img: 'pt'},
     {t: 'Ascension Gate', d: 'Lo strumento del Game Master: sessioni, sezioni di dungeon casuali e appunti di campagna per un setting originale.', href: 'https://ascension-gate.vercel.app', tag: 'Gioco di ruolo', img: 'ag', ext: 1}
   ],
   timeline: [
@@ -123,12 +124,13 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return
 function $(i){return document.getElementById(i);}
 $('nm').textContent=P.handle+' / '+P.name;$('role').textContent=P.role;$('hd').textContent='@'+P.handle;
 $('h1').innerHTML=esc(P.hero).replace(/(funzionare le cose)/,'<mark>$1</mark>');$('sub').textContent=P.sub;$('about').textContent=P.about;
-['li0','li1','li2'].forEach(function(i){$(i).href=LINKEDIN;});
-$('stats').innerHTML=P.stats.map(function(s,i){return '<div class="t stat s'+(i+1)+'"><b>'+esc(s[0])+'</b><span>'+esc(s[1])+'</span></div>';}).join('');
+['li0','li1','li2','idbox'].forEach(function(i){$(i).href=LINKEDIN;});
+$('stats').innerHTML=P.stats.map(function(s,i){var go=/progetti/i.test(s[1]);return '<'+(go?'a href="#progetti" aria-label="Vai alla sezione Progetti"':'div')+' class="t stat s'+(i+1)+'"'+(go?' style="color:inherit;text-decoration:none;cursor:pointer"':'')+'><b>'+esc(s[0])+'</b><span>'+esc(s[1])+(go?' →':'')+'</span></'+(go?'a':'div')+'>';}).join('');
 var C=['#2D5BFF','#FF3B30','#12C27A','#FF7AB8','#0B0B0B','#FFB000'];
 $('skills').innerHTML=P.skills.map(function(s,i){return '<div class="t sk" style="--c:'+C[i%6]+'"><span class="k">'+s.k+'</span><h3>'+esc(s.t)+'</h3><p>'+esc(s.d)+'</p><div class="tags">'+s.tags.map(function(t){return '<span>'+esc(t)+'</span>';}).join('')+'</div></div>';}).join('');
-var bg={jp:'url('+IMGJP+')',pp:'linear-gradient(135deg,#19D3C5,#0b4e5a)',ag:'linear-gradient(135deg,#7C5CFF,#2a1b66)'};
+var bg={jp:'url('+IMGJP+')',pp:'linear-gradient(135deg,#19D3C5,#0b4e5a)',ag:'linear-gradient(135deg,#7C5CFF,#2a1b66)',pt:'linear-gradient(135deg,#FF7A2B,#7a2a00)'};
 $('proj').innerHTML=P.projects.map(function(p){return '<a class="t pj" href="'+p.href+'"'+(p.ext?' target="_blank" rel="noopener"':'')+'><div class="im" style="background-image:'+bg[p.img]+'"></div><div class="b"><span class="tg">'+esc(p.tag)+'</span><h3>'+esc(p.t)+'</h3><p>'+esc(p.d)+'</p></div></a>';}).join('');
+if(P.projects.length===4)document.querySelectorAll('a.pj').forEach(function(a){a.style.gridColumn='span 6';});
 $('tl').innerHTML=P.timeline.map(function(t){return '<div class="it"><div class="y">'+esc(t.y)+'</div><div><h4>'+esc(t.t)+'</h4><div class="o">'+esc(t.o)+'</div><p>'+esc(t.d)+'</p></div></div>';}).join('');
 $('tr').innerHTML=P.training.map(function(t){return '<div class="tr"><b>'+t[0]+'</b><span>'+esc(t[1])+'</span></div>';}).join('');
 $('lg').innerHTML=P.langs.map(function(l){return '<div class="tr"><b style="width:auto">'+esc(l[0])+'</b><span>'+esc(l[1])+'</span></div>';}).join('');
