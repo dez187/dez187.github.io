@@ -15,6 +15,9 @@ h1{font:700 clamp(2.4rem,7vw,4rem)/1.05 Fraunces,Georgia,serif;margin:0 0 .3em}
 header p{color:var(--mut);max-width:48ch;margin:0 auto}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 a.card{display:flex;flex-direction:column;gap:6px;background:var(--card);border:1px solid var(--line);padding:22px;border-radius:6px;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
+a.card{position:relative;overflow:hidden}
+a.card::before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--acc) 18%,transparent),transparent 70%);opacity:0;transition:opacity .25s}
+a.card:hover::before{opacity:1}
 a.card:hover{transform:translateY(-3px);border-color:var(--acc)}
 .tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:700}
 .card h2{font:600 1.5rem Fraunces,Georgia,serif;margin:0}
@@ -34,6 +37,12 @@ footer{text-align:center;color:var(--mut);font-size:.85rem;margin-top:64px}
    <p>Dossier di viaggio per Tokyo, Kyoto e Osaka: mappe giorno per giorno, voli, hotel, budget e checklist.</p>
    <span class="go">Apri il dossier →</span>
   </a>
+  <a class="card" href="giappone/viaggio/">
+   <span class="tag">Viaggio · versione animata</span>
+   <h2>Giappone 2027, scorrendo</h2>
+   <p>Lo stesso dossier come un film: scorrete e la mappa vi porta da un giorno all'altro, disegnando i percorsi.</p>
+   <span class="go">Guardalo scorrere →</span>
+  </a>
   <a class="card" href="https://ascension-gate.vercel.app" target="_blank" rel="noopener">
    <span class="tag">Gioco di ruolo</span>
    <h2>Ascension Gate</h2>
@@ -44,5 +53,5 @@ footer{text-align:center;color:var(--mut);font-size:.85rem;margin-top:64px}
  </main>
  <footer>© <span id="y"></span> · pagina ospitata su GitHub Pages</footer>
 </div>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script>document.getElementById('y').textContent=new Date().getFullYear();document.querySelectorAll('a.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});});</script>
 </body></html>
