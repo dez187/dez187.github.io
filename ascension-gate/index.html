@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1014">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ascension Gate · Demo</title>
+  <link rel="icon" href="icona.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="app" aria-live="polite">
+    <div class="avvio"><div class="avvio-segno"></div><p>Apertura del Gate…</p></div>
+  </div>
+  <script src="vendor/cytoscape.min.js" defer></script>
+  <script src="vendor/cytoscape-dagre.js" defer></script>
+  <script type="module" src="js/app.js"></script>
+<script>
+(function(){var b=document.createElement("div");b.setAttribute("role","note");
+b.style.cssText="position:fixed;left:0;right:0;bottom:0;z-index:9999;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;padding:6px 12px calc(6px + env(safe-area-inset-bottom,0px));background:#0b0b0b;color:#ffd60a;font:600 12px/1.3 system-ui,sans-serif;border-top:3px solid #ffd60a";
+b.innerHTML='<span>Demo con dati di fantasia: tutto resta nel tuo browser.</span><button type="button" id="ag-reset" style="background:#ffd60a;color:#0b0b0b;border:0;border-radius:8px;padding:4px 9px;font:700 12px system-ui;cursor:pointer">Ripristina</button><a href="../" style="color:#fff">\u2190 Progetti</a>';
+document.addEventListener("DOMContentLoaded",function(){document.body.appendChild(b);document.getElementById("ag-reset").onclick=function(){try{localStorage.removeItem("ag-demo-v1");localStorage.removeItem("ag-coda");}catch(e){}location.hash="";location.reload();};});})();
+</script>
+</body>
+</html>
