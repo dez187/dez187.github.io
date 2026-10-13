@@ -3,7 +3,7 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Giappone 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Zen+Old+Mincho:wght@700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Zen+Old+Mincho:wght@700;900&display=swap">
 <style>/* required styles */
 
 
@@ -1326,10 +1326,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
 
 	}
 
+
 </style>
 <style>
-@property --c{syntax:'<color>';inherits:true;initial-value:#6C8FD0}
-:root{--c:#6C8FD0;--bg:#0A0E14;--ink:#F2F5F8;--mut:#A3AEBB;--line:#ffffff26;--glass:#0C121Aa8;transition:--c .9s ease}
+@property --c{syntax:'<color>';inherits:true;initial-value:#FFD60A}
+:root{--c:#FFD60A;--bg:#0A0E14;--ink:#F2F5F8;--mut:#A3AEBB;--line:#ffffff26;--glass:#0C121Aa8;transition:--c .9s ease}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Bricolage Grotesque",system-ui,sans-serif;overflow-x:hidden}
 #map{position:fixed;inset:0;z-index:0;background:#10161e}
@@ -1377,6 +1378,73 @@ select option{color:#000}
 @keyframes b{50%{transform:translate(-50%,8px)}}
 @media (max-width:760px){.scene{align-items:flex-end;padding:90px 14px 40px}.card{padding:20px}.cover{margin:-20px -20px 14px}#rail{display:none}.card.wide{width:100%}}
 @media (prefers-reduced-motion:reduce){.card{transition:none;transform:none;opacity:1}}
+/* ===== PALETTE_ITOMI ===== */
+:root{--bg:#0B0B0B;--glass:#FFFDF5;--line:#0B0B0B;--ink:#0B0B0B;--mut:#3b4050}
+body{font-family:"Space Grotesk","Bricolage Grotesque",system-ui,sans-serif;color:#FFFDF5}
+#veil{background:radial-gradient(120% 90% at 85% 50%,transparent 0%,#0B0B0B66 60%,#0B0B0BCC 100%)}
+#top b{font-family:"Archivo Black",sans-serif;letter-spacing:.02em;color:#FFD60A}
+#top a{background:#E6007E;border:3px solid #0B0B0B;color:#fff;font-weight:700;box-shadow:3px 3px 0 #0B0B0B}
+#rail button{background:#FFFDF5aa;border:2px solid #0B0B0B}
+#rail button.on{background:var(--c);transform:scale(1.8)}
+#kanji{opacity:.22}
+.card{background:#FFFDF5;color:#0B0B0B;border:4px solid #0B0B0B;border-radius:20px;box-shadow:9px 9px 0 var(--c);backdrop-filter:none;padding:26px 28px}
+.card h1,.card h2,.card h3{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.01em}
+.card h1{font-size:clamp(2.6rem,7vw,5rem);line-height:.95}
+.card h2{font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.02}
+.k{background:var(--c);color:#0B0B0B;display:inline-block;padding:.15rem .6rem;border-radius:8px;border:2px solid #0B0B0B;font-family:"Space Mono",monospace;font-weight:700}
+.lead,.theme,.alt,small,.tm,.cs{color:#3b4050}
+.chip{border:2px solid #0B0B0B;background:#fff;color:#0B0B0B;font-weight:700}
+.chip b{color:#E6007E}
+.note{background:#FFD60A;border:2px solid #0B0B0B;border-left:6px solid #0B0B0B;color:#0B0B0B;border-radius:10px}
+.stops li{border-top:2px dashed #0B0B0B55}
+.btn{background:var(--c);color:#0B0B0B;border:3px solid #0B0B0B;border-radius:12px;box-shadow:4px 4px 0 #0B0B0B;font-family:"Space Mono",monospace;text-transform:uppercase;font-weight:700;font-size:.82rem}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #0B0B0B}
+.cover{border-bottom:4px solid #0B0B0B}
+.h{background:#fff;border:3px solid #0B0B0B;border-radius:12px}
+.h .pr,.pr{color:#E6007E}
+select,input[type=range]{background:#fff;color:#0B0B0B;border:3px solid #0B0B0B;border-radius:10px}
+.big{font-family:"Archivo Black",sans-serif;color:#0B0B0B;-webkit-text-stroke:0}
+.bar{border:3px solid #0B0B0B;border-radius:8px;height:18px}
+.leg span{border-bottom:2px dashed #0B0B0B55}
+.hero-n b{color:#E6007E;font-family:"Archivo Black",sans-serif}
+.fl img{border:3px solid #0B0B0B;border-radius:12px}
+.ck li{border-bottom:2px solid #0B0B0B33}
+
+.bar{background:#fff}
+.bar i{border-right:3px solid #0B0B0B}.bar i:last-child{border-right:0}
+.sw{display:inline-block;width:15px;height:15px;border:2px solid #0B0B0B;border-radius:4px;margin-right:8px;vertical-align:-2px}
+.leg span{font-weight:500}
+.leg b{font-family:"Space Mono",monospace}
+label{color:#0B0B0B;font-weight:700}
+output{background:#FFD60A;border:2px solid #0B0B0B;border-radius:6px;padding:0 7px;font-family:"Space Mono",monospace}
+input[type=range]{accent-color:#E6007E;padding:0;height:26px}
+select{font-weight:500}
+.card .big{font-size:3.4rem;line-height:1}
+.ck{margin-top:14px}
+.ck li{align-items:center;background:#fff;border:3px solid #0B0B0B;border-radius:12px;padding:10px 12px;margin:0 0 10px;box-shadow:4px 4px 0 #0B0B0B;font-weight:500;transition:transform .12s,box-shadow .12s}
+.ck li:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #0B0B0B}
+.ck li .bx{flex:0 0 auto;position:relative;width:24px;height:24px;border:3px solid #0B0B0B;border-radius:7px;background:#fff}
+.ck li.on{opacity:1;text-decoration:none;background:#FFD60A}
+.ck li.on .bx{background:#E6007E}
+.ck li.on .bx::after{content:"";position:absolute;left:6px;top:0;width:6px;height:12px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
+
+@media (max-width:760px){
+  .scene{padding:44vh 12px 28px}
+  #top{padding:10px 12px}
+  .card{padding:18px 16px;border-width:3px;border-radius:16px;box-shadow:5px 5px 0 var(--c)}
+  .card h1{font-size:clamp(2.2rem,11.5vw,3rem)}
+  .card h2{font-size:1.3rem}
+  .cover{height:120px;margin:-18px -16px 14px}
+  .stops li{grid-template-columns:48px minmax(0,1fr);gap:2px 10px}
+  .stops li .cs{grid-column:2}
+  .card .big{font-size:2.8rem}
+  .hgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fl{grid-template-columns:96px 1fr}.fl img{width:96px;height:64px}
+  .btn{padding:.6rem 1rem}
+  .hero-n{gap:16px}
+  #kanji{font-size:7rem;opacity:.16}
+}
+.leg>span>span{border:0;display:inline}
 </style></head><body>
 <div id="map"></div><div id="veil"></div><div id="kanji">東京</div>
 <div id="top"><b>旅 Giappone 2027</b><a href="../">← Progetti</a></div>
@@ -1500,6 +1568,8 @@ function dayHtml(d,withLink){
   return h;
 }
 
+CC={tokyo:"#01CCB7",fuji:"#FFD60A",kyoto:"#E6007E",osaka:"#FFFDF5"};
+BCAT=[["Voli","#E6007E"],["Alloggi","#01CCB7"],["Trasporti","#FFD60A"],["Cibo","#242833"],["Attività","#FFFDF5"],["Extra","#0B0B0B"]];
 (function(){
 var KJ={tokyo:'東京',fuji:'富士',kyoto:'京都',osaka:'大阪'};
 var cov={tokyo:'places/shibuya-sky',fuji:'places/chureito',kyoto:'places/kiyomizu',osaka:'places/osaka-castle'};
@@ -1514,13 +1584,13 @@ function pad(){return wide()?{paddingTopLeft:[Math.min(560,innerWidth*.42),70],p
 function dens(pts,n){var o=[];for(var i=0;i<pts.length-1;i++){for(var k=0;k<n;k++){o.push([pts[i][0]+(pts[i+1][0]-pts[i][0])*k/n,pts[i][1]+(pts[i+1][1]-pts[i][1])*k/n]);}}o.push(pts[pts.length-1]);return o;}
 function drawLine(pts,color,w){var id=++anim,full=dens(pts,10),pl=L.polyline([],{color:color,weight:w||4,opacity:.95,lineCap:'round'}).addTo(lay),i=0,t0=null,dur=Math.min(2600,900+full.length*8);
   function step(ts){if(id!==anim)return;if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur);i=Math.floor(p*full.length);pl.setLatLngs(full.slice(0,Math.max(2,i)));if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
-function icon(n,c){return L.divIcon({className:'',html:'<div style="width:28px;height:28px;border-radius:50%;background:'+c+';color:#0A0E14;border:2px solid #fff;font:800 13px/24px system-ui;text-align:center;box-shadow:0 0 0 6px '+c+'40">'+n+'</div>',iconSize:[28,28],iconAnchor:[14,14]});}
+function icon(n,c){return L.divIcon({className:'',html:'<div style="width:28px;height:28px;border-radius:50%;background:'+c+';color:#0B0B0B;border:3px solid #0B0B0B;font:800 13px/22px system-ui;text-align:center;box-shadow:3px 3px 0 #0B0B0B">'+n+'</div>',iconSize:[28,28],iconAnchor:[14,14]});}
 function arc(a,b,n){var o=[],m=[(a[0]+b[0])/2+14,(a[1]+b[1])/2];for(var i=0;i<=n;i++){var t=i/n;o.push([(1-t)*(1-t)*a[0]+2*(1-t)*t*m[0]+t*t*b[0],(1-t)*(1-t)*a[1]+2*(1-t)*t*m[1]+t*t*b[1]]);}return o;}
 var ROME=[41.8,12.25],TKY=[35.55,139.78],KIX=[34.43,135.23];
 var VIEW={
  intro:function(){lay.clearLayers();map.flyTo([36,95],3,{duration:1.6});},
- flight:function(){lay.clearLayers();var a=arc(ROME,TKY,60);L.circleMarker(ROME,{radius:6,color:'#fff',fillColor:'#E58BAA',fillOpacity:1}).addTo(lay);L.circleMarker(TKY,{radius:6,color:'#fff',fillColor:'#E58BAA',fillOpacity:1}).addTo(lay);
-   map.flyToBounds([ROME,TKY],Object.assign({duration:1.6},pad()));drawLine(a,'#E58BAA',3);},
+ flight:function(){lay.clearLayers();var a=arc(ROME,TKY,60);L.circleMarker(ROME,{radius:6,color:'#fff',fillColor:'#E6007E',fillOpacity:1}).addTo(lay);L.circleMarker(TKY,{radius:6,color:'#fff',fillColor:'#E6007E',fillOpacity:1}).addTo(lay);
+   map.flyToBounds([ROME,TKY],Object.assign({duration:1.6},pad()));drawLine(a,'#E6007E',3);},
  day:function(d){lay.clearLayers();var pts=[],n=0,c=CC[d.city];
    d.items.forEach(function(it){if(it.c){n++;pts.push(it.c);L.marker(it.c,{icon:icon(n,c)}).bindTooltip(esc(it.t)).addTo(lay);}});
    var r=ROUTES[d.n],all=pts.slice();if(r){r.pts.forEach(function(p){all.push(p);});}
@@ -1543,7 +1613,7 @@ DAYS.forEach(function(d,i){
   var ds=dayLink(d);
   var body='<div class="k">Giorno '+d.n+' · '+esc(d.date)+'</div><h2>'+esc(d.title)+'</h2><div class="chips"><span class="chip">Spesa <b>'+esc(d.cost)+'</b></span>'+(ROUTES[d.n]?'<span class="chip"><b>'+ROUTES[d.n].km+'</b> km · <b>'+ROUTES[d.n].min+'</b> min</span>':'')+'</div>';
   if(d.theme)body+='<p class="theme">'+esc(d.theme)+'</p>';
-  d.notes.forEach(function(n){body+='<div class="note">'+esc(n)+'</div>';});
+  d.notes.forEach(function(n){var m=n.match(/^(.+?[a-zàèéìòù])([A-ZÀ-Ý].*)$/);body+='<div class="note">'+(m?'<b>'+esc(m[1])+'.</b> '+esc(m[2]):esc(n))+'</div>';});
   body+='<ul class="stops">'+d.items.map(function(it){return '<li><span class="tm">'+esc(it.time)+'</span><span><b>'+esc(it.t)+'</b>'+(it.d?'<br><small>'+esc(it.d)+'</small>':'')+'</span><span class="cs">'+esc(it.cost||'')+'</span></li>';}).join('')+'</ul>';
   (d.alts||[]).forEach(function(a){body+='<p class="alt"><b>'+esc(a.label)+'</b> '+esc(a.text)+'</p>';});
   if(ds)body+='<p><a class="btn" target="_blank" rel="noopener" href="'+ds+'">Apri in Google Maps</a></p>';
@@ -1557,7 +1627,7 @@ var scenes=[].slice.call(document.querySelectorAll('.scene'));
 document.getElementById('rail').innerHTML=S.map(function(s,i){return '<button data-i="'+i+'" data-t="'+esc(s.label)+'" aria-label="'+esc(s.label)+'"></button>';}).join('');
 document.getElementById('rail').onclick=function(e){var b=e.target.closest('button');if(b)scenes[+b.dataset.i].scrollIntoView({behavior:'smooth',block:'center'});};
 var cur=-1;
-function act(i){if(i===cur)return;cur=i;var s=S[i];document.documentElement.style.setProperty('--c',s.city==='tokyo'&&s.kind==='intro'?'#6C8FD0':(s.kind==='flight'?'#E58BAA':CC[s.city]));
+function act(i){if(i===cur)return;cur=i;var s=S[i];document.documentElement.style.setProperty('--c',s.city==='tokyo'&&s.kind==='intro'?'#FFD60A':(s.kind==='flight'?'#E6007E':CC[s.city]));
   document.getElementById('kanji').textContent=s.kind==='intro'||s.kind==='flight'?'旅':KJ[s.city];
   [].forEach.call(document.getElementById('rail').children,function(b,k){b.classList.toggle('on',k===i);});
   var v=VIEW[s.kind];if(s.kind==='day')v(s.arg);else v();}
@@ -1568,13 +1638,13 @@ var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInte
 var food=33,act2=125,shop=0;
 function bud(){var b=budgetCalc(sel,food,act2,shop);document.getElementById('est').textContent='~'+Math.round(b.tot).toLocaleString('it-IT')+' €';
   var cl=b.tot<=2850?'Dentro il budget, con margine':(b.tot<=3000?'Dentro il tetto di 3.000 €, ma al limite':'Oltre il tetto di 3.000 € a persona');
-  document.getElementById('bres').innerHTML='<div class="big">'+eur(b.tot)+'</div><small>a persona · coppia '+eur(b.tot*2)+'</small><div class="bar">'+b.parts.map(function(p,i){return '<i style="width:'+p/b.tot*100+'%;background:'+BCAT[i][1]+'"></i>';}).join('')+'</div><div class="leg">'+b.parts.map(function(p,i){return '<span><span>'+BCAT[i][0]+'</span><b>'+eur(p)+'</b></span>';}).join('')+'</div><p class="note">'+cl+'</p>';}
+  document.getElementById('bres').innerHTML='<div class="big">'+eur(b.tot)+'</div><small>a persona · coppia '+eur(b.tot*2)+'</small><div class="bar">'+b.parts.map(function(p,i){return '<i style="width:'+p/b.tot*100+'%;background:'+BCAT[i][1]+'"></i>';}).join('')+'</div><div class="leg">'+b.parts.map(function(p,i){return '<span><span><i class="sw" style="background:'+BCAT[i][1]+'"></i>'+BCAT[i][0]+'</span><b>'+eur(p)+'</b></span>';}).join('')+'</div><p class="note">'+cl+'</p>';}
 document.getElementById('bform').innerHTML=Object.keys(OPT).map(function(k){return '<label>'+LAB[k]+'<select data-k="'+k+'">'+OPT[k].map(function(o,i){return '<option value="'+i+'"'+(i===sel[k]?' selected':'')+'>'+o[0]+' · '+eur(o[1])+'</option>';}).join('')+'</select></label>';}).join('')+
  '<label>Cibo al giorno a persona <output id="of">33</output> €<input type="range" data-r="f" min="22" max="50" value="33"></label><label>Ingressi e attività <output id="oa">125</output> €<input type="range" data-r="a" min="60" max="220" step="5" value="125"></label><label>Shopping <output id="os">0</output> €<input type="range" data-r="s" min="0" max="500" step="25" value="0"></label>';
 document.getElementById('bform').addEventListener('input',function(e){var t=e.target;if(t.dataset.k)sel[t.dataset.k]=+t.value;else{var v=+t.value;if(t.dataset.r==='f'){food=v;document.getElementById('of').textContent=v;}if(t.dataset.r==='a'){act2=v;document.getElementById('oa').textContent=v;}if(t.dataset.r==='s'){shop=v;document.getElementById('os').textContent=v;}}bud();});
 bud();
 var st={};try{st=JSON.parse(localStorage.getItem('ck6')||'{}');}catch(e){}
-function ckr(){document.getElementById('ck').innerHTML=CK.map(function(t,i){return '<li data-i="'+i+'" class="'+(st[i]?'on':'')+'"><span>'+(st[i]?'☑':'☐')+'</span><span>'+esc(t)+'</span></li>';}).join('');}
+function ckr(){document.getElementById('ck').innerHTML=CK.map(function(t,i){return '<li data-i="'+i+'" class="'+(st[i]?'on':'')+'"><span class="bx"></span><span>'+esc(t)+'</span></li>';}).join('');}
 document.getElementById('ck').onclick=function(e){var li=e.target.closest('li');if(!li)return;var i=li.dataset.i;st[i]=!st[i];try{localStorage.setItem('ck6',JSON.stringify(st));}catch(x){}ckr();};ckr();
 act(0);
 })();
