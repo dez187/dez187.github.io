@@ -53,13 +53,17 @@ export function cardHead(title, right = "", id = "") {
 const UP_ICON = { schedule: "repeat", pac: "trend", card: "card", tx: "calendar", loan: "percent" };
 const UP_TONE = { schedule: "blue", pac: "aqua", card: "violet", tx: "neutral", loan: "orange" };
 
-export function upcomingRow(it, today) {
+// after: disponibile previsto a fine giornata della scadenza (facoltativo).
+export function upcomingRow(it, today, after = null) {
   const amount = it.sign > 0 ? "+" + fmtEUR(it.amount) : it.sign < 0 ? MINUS + fmtEUR(it.amount) : fmtEUR(it.amount);
   const sub = [it.due ? "da registrare" : fmtRelative(it.date, today), it.where || it.label].filter(Boolean).join(" · ");
   let right;
   if (it.due && it.kind === "pac") right = html`<button type="button" class="btn sm primary" data-action="register-pac" data-id="${it.id}">Registra</button>`;
   else if (it.due && it.kind === "card") right = html`<button type="button" class="btn sm" data-action="settle-card" data-renew="1" data-id="${it.id}">Rinnova</button>`;
-  else right = html`<span class="amount ${it.tone || (it.sign > 0 ? "pos" : it.sign === 0 ? "muted" : "out")}">${amount}</span>`;
+  else {
+    right = html`<span class="amount ${it.tone || (it.sign > 0 ? "pos" : it.sign === 0 ? "muted" : "out")}">${amount}</span>`;
+    if (after != null) right = html`<span class="row-end">${right}<span class="row-note ${after < 0 ? "neg" : ""}">poi ${fmtEUR(after)}</span></span>`;
+  }
   const openAction = it.kind === "schedule" ? "edit-schedule" : it.kind === "tx" ? "edit-tx" : "edit";
   const coll = it.kind === "pac" ? "pac" : it.kind === "card" ? "creditCards" : it.kind === "loan" ? "loans" : "";
   return html`<li class="row">
@@ -137,7 +141,7 @@ function alertText(a) {
         ? html`<strong>${a.name} non è ancora arrivato</strong> (era atteso ${onDate("il", a.expected)}). Se tarda ancora, su ${a.risk.name} non ci saranno abbastanza soldi per ${debitsText(a.risk)}: mancherebbero ${fmtEUR(a.risk.need)}${a.risk.from ? `, che puoi spostare da ${a.risk.from.name}` : ""}.`
         : html`<strong>${a.name} non è ancora arrivato</strong> (era atteso ${onDate("il", a.expected)}). Per ora gli addebiti dei prossimi giorni restano coperti.`;
     case "account-negative":
-      return html`<strong>${a.name} potrebbe andare in rosso.</strong> Con le scadenze note scende sotto zero ${onDate("da", a.date)}, fino a ${fmtEUR(a.value)} ${onDate("il", a.lowDate)}.`;
+      return html`<strong>${a.name} potrebbe andare in rosso.</strong> Con le scadenze note ${a.date === a.lowDate ? `scende a ${fmtEUR(a.value)} ${onDate("il", a.date)}` : `scende sotto zero ${onDate("da", a.date)}, fino a ${fmtEUR(a.value)} ${onDate("il", a.lowDate)}`}.`;
     case "total-low":
       return a.threshold > 0
         ? html`<strong>Il disponibile previsto scende sotto la tua soglia di ${fmtEUR(a.threshold)}.</strong> Fino a ${fmtEUR(a.value)} ${onDate("il", a.date)}, contando anche le spese medie.`

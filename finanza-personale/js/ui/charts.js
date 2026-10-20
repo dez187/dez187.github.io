@@ -111,6 +111,18 @@ function labelSvg(svg, summary) {
   svg.setAttribute("aria-label", summary);
 }
 
+// ---------- mini linea di andamento (riquadri) ----------
+export function sparkline(points, { width = 96, height = 28, color = "var(--ink-3)" } = {}) {
+  if (!points || points.length < 2) return "";
+  const vals = points.map((p) => p.value);
+  const lo = Math.min(...vals), hi = Math.max(...vals), pad = 3;
+  const x = (i) => pad + (i * (width - pad * 2)) / (points.length - 1);
+  const y = (v) => pad + (height - pad * 2) * (hi === lo ? 0.5 : 1 - (v - lo) / (hi - lo));
+  const d = vals.map((v, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join("");
+  const li = vals.length - 1;
+  return `<svg class="spark" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" aria-hidden="true"><path d="${d}" class="series-line muted" style="stroke:${color}"/><circle cx="${x(li).toFixed(1)}" cy="${y(vals[li]).toFixed(1)}" r="3" class="end-dot" style="fill:var(--series-1)"/></svg>`;
+}
+
 // ---------- area / linea nel tempo ----------
 export function areaChart(el, opts) {
   const { points = [], height = 220, format = fmtEUR, color = "var(--series-1)", xFormat, summary } = opts;
@@ -137,7 +149,7 @@ export function areaChart(el, opts) {
     el.innerHTML = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" tabindex="0">
       <defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:${color};stop-opacity:.16"/><stop offset="1" style="stop-color:${color};stop-opacity:0"/></linearGradient></defs>
       ${grid}
-      <path d="${area}" style="fill:url(#${id})"/>
+      ${y0 === 0 ? `<path d="${area}" style="fill:url(#${id})"/>` : ""}
       <path d="${line}" class="series-line" style="stroke:${color}"/>
       <circle cx="${x(last).toFixed(1)}" cy="${y(points[last].value).toFixed(1)}" r="4" class="end-dot" style="fill:${color}"/>
       <g class="hover" visibility="hidden"><line class="crosshair" y1="${padT}" y2="${padT + ih}"/><circle r="4.5" class="end-dot" style="fill:${color}"/></g>
@@ -517,12 +529,19 @@ export function multiLineChart(el, opts) {
     drawn.forEach((s, k) => {
       const pts = s.points.map((p) => [x(at.get(p.date)), y(p.value)]);
       const d = pts.map(([px, py], i) => `${i ? "L" : "M"}${px.toFixed(1)},${py.toFixed(1)}`).join("");
-      if (s.area) {
+      if (s.area && y0 === 0) {
         defs += `<linearGradient id="${id}-${k}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:${s.color};stop-opacity:.14"/><stop offset="1" style="stop-color:${s.color};stop-opacity:0"/></linearGradient>`;
         body += `<path d="${d}L${pts[pts.length - 1][0].toFixed(1)},${padT + ih}L${pts[0][0].toFixed(1)},${padT + ih}Z" style="fill:url(#${id}-${k})"/>`;
       }
       body += `<path d="${d}" class="series-line${s.muted ? " muted" : ""}" style="stroke:${s.color}${s.dashed ? ";stroke-dasharray:5 4" : ""}"/>`;
     });
+    const mk = opts.marker;
+    if (mk && at.has(mk.date)) {
+      const mx = x(at.get(mk.date)), my = y(mk.value);
+      const anchor = mx < padL + 60 ? "start" : mx > padL + iw - 60 ? "end" : "middle";
+      const ly = my + 20 > padT + ih ? my - 10 : my + 20;
+      body += `<circle cx="${mx.toFixed(1)}" cy="${my.toFixed(1)}" r="4" class="end-dot" style="fill:${mk.color || "var(--ink-2)"}"/><text x="${mx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${anchor}" class="axis-label strong">${esc(mk.label)}</text>`;
+    }
     const nLabels = Math.max(2, Math.min(6, Math.floor(iw / 90)));
     const cand = [...new Set(Array.from({ length: nLabels }, (_, k) => nearest(t0 + (k * span) / (nLabels - 1))))];
     // Etichette ad almeno 48px l'una dall'altra; l'ultima data resta sempre.
