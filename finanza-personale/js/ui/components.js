@@ -61,7 +61,7 @@ export function txRow(t, state, { showDate = false, fmtDate } = {}) {
   const person = t.kind === "Uscita" || t.kind === "Entrata" ? String(t.person || "").trim() : "";
   const who = person ? (t.kind === "Entrata" ? `da ${person}` : Number(t.owed) > 0 ? `${person} ti deve ${fmtEUR(Number(t.owed))}` : `con ${person}`) : "";
   const trip = t.kind === "Giroconto" ? "" : String(t.tag || "").trim();
-  const sub = [t.kind === "Giroconto" ? "Giroconto" : t.category || "Altro", who, trip, route, showDate && fmtDate ? fmtDate(t.date) : ""].filter(Boolean).join(" · ");
+  const sub = [t.kind === "Giroconto" ? "Giroconto" : t.category || "Altro", who, trip, route].filter(Boolean).join(" · ");
   const tags = [];
   if (t.scheduleId) tags.push(badge("ricorrente", "subtle"));
   if (t.pacId) tags.push(badge("PAC", "subtle"));
@@ -69,7 +69,7 @@ export function txRow(t, state, { showDate = false, fmtDate } = {}) {
   return html`<button type="button" class="row tx-row" data-action="edit-tx" data-id="${t.id}">
     ${categoryAvatar(t.category, state.categories, t.kind)}
     <span class="row-main"><span class="row-title"><span class="clip">${t.description || "Senza descrizione"}</span>${tags}</span><span class="row-sub">${sub}</span></span>
-    ${txAmount(t)}
+    ${showDate && fmtDate ? html`<span class="row-end">${txAmount(t)}<span class="row-note">${fmtDate(t.date)}</span></span>` : txAmount(t)}
   </button>`;
 }
 

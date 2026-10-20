@@ -43,7 +43,7 @@ export function rangeSwitch(action, current, label = "Periodo del grafico") {
 }
 
 export function pageHead(title, actions = "", eyebrow = "") {
-  return html`<header class="page-head"><div>${eyebrow ? html`<p class="eyebrow">${eyebrow}</p>` : ""}<h1>${title}</h1></div>${actions ? html`<div class="head-actions">${actions}</div>` : ""}</header>`;
+  return html`<header class="page-head"><div>${eyebrow ? html`<p class="eyebrow">${eyebrow}</p>` : ""}<h1 class="page-title">${title}</h1></div>${actions ? html`<div class="head-actions">${actions}</div>` : ""}</header>`;
 }
 
 export function cardHead(title, right = "", id = "") {

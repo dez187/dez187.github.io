@@ -63,15 +63,29 @@ function ruleField(v) {
 }
 
 // Campo da evidenziare quando la fine di una programmazione non va bene.
+// Ultimo conto usato per le uscite e per le entrate, solo su questo dispositivo: lo si propone la volta dopo.
+const payKey = (income) => `patrimonio:lastPay:${income ? "in" : "out"}`;
+function lastPay(state, income) {
+  let v = "";
+  try { v = localStorage.getItem(payKey(income)) || ""; } catch {}
+  const [type, id] = v.split(":");
+  const list = type === "account" ? state.accounts : type === "card" ? state.creditCards : [];
+  return (list || []).some((x) => x.id === id) ? v : "";
+}
+function rememberPay(income, value) {
+  try { if (value) localStorage.setItem(payKey(income), value); } catch {}
+}
+
 const endField = (v) => (v.endMode === "Numero di rate" ? "endCount" : v.endMode === "Data di fine" ? "endDate" : "endMode");
 
-// Persona e viaggio (facoltativi): con chi è la spesa e quanto ti deve restituire, o chi ti restituisce i soldi.
-function peopleFields(mode, v, ctx) {
+// Note, persona e viaggio (facoltativi): con chi è la spesa e quanto ti deve restituire, o chi ti restituisce i soldi.
+function peopleFields(mode, v, ctx, note = "") {
   // Aperta se ha dei valori, finché l'utente non la apre o la chiude: da lì vale la sua scelta.
-  const open = v.moreOpen === undefined ? !!(v.person || v.tag || (mode === "Uscita" && v.owed)) : !!v.moreOpen;
+  const open = v.moreOpen === undefined ? !!(v.person || v.tag || v.note || (mode === "Uscita" && v.owed)) : !!v.moreOpen;
   return html`<details class="field wide op-more"${raw(open ? " open" : "")}>
-    <summary>Persona e viaggio <span class="muted">(facoltativo)</span></summary>
+    <summary>Note, persona e viaggio <span class="muted">(facoltativo)</span></summary>
     <div class="form-grid">
+      ${note}
       ${field(mode === "Uscita" ? "Con chi o per chi" : "Da chi (restituzione)", html`<input class="input" id="op-person" name="person" value="${v.person || ""}" list="op-people" autocomplete="off" placeholder="es. Cinzia">`, { id: "op-person", hint: mode === "Entrata" ? "Un'entrata da una persona chiude quanto ti doveva: non conta tra le entrate." : "" })}
       ${mode === "Uscita" ? field("Ti deve restituire (€)", html`<input class="input num" id="op-owed" name="owed" inputmode="decimal" value="${v.owed || ""}" autocomplete="off" placeholder="0,00">`, { id: "op-owed", hint: "Questa parte non è una tua spesa: la ritrovi in Persone finché non te la restituisce." }) : ""}
       ${field("Viaggio o evento", html`<input class="input" id="op-tag" name="tag" value="${v.tag || ""}" list="op-tags" autocomplete="off" placeholder="es. Londra ottobre 2026">`, { id: "op-tag", wide: mode !== "Uscita" })}
@@ -91,8 +105,7 @@ function fieldsFor(mode, v, state, ctx) {
       ${categoryField(state, mode, v)}
       ${field(mode === "Uscita" ? "Pagato con" : "Accreditato su", html`<select class="input" id="op-payWith" name="payWith"><option value="">— nessun conto —</option>${accountOptions(state, v.payWith, { prefix: "account:", cards: true })}</select>`, { id: "op-payWith" })}
       ${date("Data")}
-      ${note}
-      ${peopleFields(mode, v, ctx)}
+      ${peopleFields(mode, v, ctx, note)}
       ${ruleField(v)}`;
   }
   if (mode === "Giroconto") {
@@ -163,7 +176,7 @@ export function openOperationForm(app, { tx = null, schedule = null, mode = null
       categoryTouched: true,
     };
   } else {
-    v = { mode: mode || "Uscita", amount: "", description: "", category: "Altro", payWith: "", date: today, from: "", to: "", repeat: "Nessuna", frequency: "Mensile", recKind: "Uscita", endMode: "Nessuna fine", note: "", ...preset };
+    v = { mode: mode || "Uscita", amount: "", description: "", category: "Altro", payWith: lastPay(state, mode === "Entrata"), date: today, from: "", to: "", repeat: "Nessuna", frequency: "Mensile", recKind: "Uscita", endMode: "Nessuna fine", note: "", ...preset };
     if (v.mode === "Entrata" && v.category === "Altro") v.category = "Altre entrate";
   }
 
@@ -330,6 +343,7 @@ export function openOperationForm(app, { tx = null, schedule = null, mode = null
         if (same) ops.push({ op: "update", coll: "rules", id: same.id, data: { category: data.category } });
         else ops.push({ op: "set", coll: "rules", id: app.newId(), data: { ...rule, createdAt: Date.now() } });
       }
+      rememberPay(mode === "Entrata", v.payWith);
       app.commitWithUndo(ops, tx ? "Movimento aggiornato" : mode === "Uscita" ? "Uscita registrata" : "Entrata registrata");
       if (rule) setTimeout(() => offerRuleApply(app, rule), 400);
       return true;
@@ -385,6 +399,7 @@ export function openOperationForm(app, { tx = null, schedule = null, mode = null
     if (end.error) return fail(end.error, endField(v));
     const sched = { type: income ? "income" : "expense", description, category: category || (income ? "Altre entrate" : "Altro"), amount, payWith: v.payWith, frequency: v.frequency || "Mensile", startDate: v.date, ...end, done: 0, status: "Attivo", note, createdAt: Date.now() };
     const kind = income ? "Entrata" : "Uscita";
+    rememberPay(income, v.payWith);
     const first = tx ? { date: v.date, description, category: sched.category, kind, amount, ...splitPay(v.payWith), note, ...staleTxFields(tx, kind) } : null;
     return createSchedule(app, sched, ops, income ? "Entrata ricorrente creata" : "Spesa ricorrente creata", first);
   };

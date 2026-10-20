@@ -11,7 +11,7 @@
   --border-strong: #d9d5cd;
   --ink: #1c1b19;
   --ink-2: #57544e;
-  --ink-3: #767269;
+  --ink-3: #6d6961;
   --accent: #c4501e;
   --accent-ink: #b4461a;
   --accent-soft: #fbede6;
@@ -63,7 +63,7 @@
     --border-strong: #383a3f;
     --ink: #f2f0eb;
     --ink-2: #b9b5ad;
-    --ink-3: #8f8b84;
+    --ink-3: #98948d;
     --accent: #e8743f;
     --accent-ink: #f08a5d;
     --accent-soft: #2e211b;
@@ -108,7 +108,7 @@
   --border-strong: #383a3f;
   --ink: #f2f0eb;
   --ink-2: #b9b5ad;
-  --ink-3: #8f8b84;
+  --ink-3: #98948d;
   --accent: #e8743f;
   --accent-ink: #f08a5d;
   --accent-soft: #2e211b;
@@ -189,7 +189,7 @@ button, a, select, input, textarea, [data-action] { touch-action: manipulation; 
 .btn:active { transform: translateY(1px); }
 .btn.primary { background: var(--accent); border-color: transparent; color: var(--on-accent); }
 .btn.primary:hover { background: color-mix(in srgb, var(--accent) 88%, var(--ink)); }
-.btn.danger { background: var(--neg); border-color: transparent; color: #fff; }
+.btn.danger { background: var(--neg); border-color: transparent; color: var(--surface); }
 .btn.danger:hover { background: color-mix(in srgb, var(--neg) 88%, #000); }
 .btn.ghost { background: transparent; border-color: transparent; }
 .btn.ghost:hover { background: var(--surface-3); }
@@ -352,7 +352,7 @@ li.row { list-style: none; }
 .row-extra { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding-left: 50px; font-size: 12.5px; }
 .row-extra .meter { flex: 1 1 160px; max-width: 360px; }
 .iban, .input-iban { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; letter-spacing: .02em; }
-.iban { font-size: .95em; -webkit-user-select: all; user-select: all; overflow-wrap: anywhere; }
+.iban { font-size: 1em; -webkit-user-select: all; user-select: all; overflow-wrap: anywhere; }
 .input-iban:not(:placeholder-shown) { text-transform: uppercase; }
 .iban-line { display: flex; align-items: center; gap: 4px 10px; flex-wrap: wrap; }
 .row-extra.iban-line { padding-bottom: 2px; }
@@ -383,8 +383,8 @@ li.row { list-style: none; }
 .tone-yellow { background: color-mix(in srgb, var(--tone-yellow) 16%, var(--surface)); color: var(--tone-yellow); }
 .tone-neutral { background: var(--surface-3); color: var(--tone-neutral); }
 .badge {
-  display: inline-flex; align-items: center; gap: 4px; height: 20px; padding: 0 7px; border-radius: 999px;
-  font-size: 11.5px; font-weight: 650; background: var(--surface-3); color: var(--ink-2); white-space: nowrap; flex: none;
+  display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: 999px;
+  font-size: 12px; font-weight: 650; background: var(--surface-3); color: var(--ink-2); white-space: nowrap; flex: none;
 }
 .badge.subtle { background: var(--surface-3); color: var(--ink-3); }
 .badge.warn { background: var(--warn-bg); color: var(--warn); }
@@ -546,6 +546,8 @@ svg.focusing .link.active, .link:hover { opacity: .5; }
 .table tbody th { font-weight: 600; }
 .cell-link { background: none; border: 0; padding: 0; text-align: left; display: grid; gap: 2px; max-width: 320px; }
 .cell-title { font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fc-acc .cell-title { white-space: normal; }
+.show-sm, .filters-toggle { display: none; }
 .cell-link:hover .cell-title { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 2px; }
 .cell-sub { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--ink-3); font-weight: 500; justify-content: inherit; }
 td.num .cell-sub { justify-content: flex-end; }
@@ -685,6 +687,8 @@ select.input { padding-right: 30px; }
     background: color-mix(in srgb, var(--page) 88%, transparent); backdrop-filter: saturate(1.4) blur(12px);
     -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--border);
   }
+  .page-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .head-actions [data-action="new-op"] { display: none; }
   .topbar-title { flex: 1; font-weight: 700; font-size: 16px; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .main { padding: 20px 20px 48px; }
 }
@@ -699,9 +703,12 @@ select.input { padding-right: 30px; }
   .main { padding: 16px 16px calc(92px + env(safe-area-inset-bottom)); }
   .page-head { margin-bottom: 14px; align-items: flex-start; }
   .page-head h1 { font-size: 24px; }
-  /* Solo icona, ma il testo resta leggibile dagli screen reader. */
-  .head-actions .btn span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  .head-actions .btn { padding: 0 10px; }
+  .head-actions { flex-wrap: wrap; }
+  .head-actions .btn { padding: 0 12px; }
+  .show-sm { display: flex; }
+  .filters-toggle { display: inline-flex; flex: none; }
+  .filters .search { flex: 1 1 0; min-width: 0; }
+  .filters:not(.open) .filter, .filters:not(.open) .seg { display: none; }
   .grid { gap: 12px; }
   .card { padding: 16px; border-radius: 16px; }
   .hide-sm { display: none; }
@@ -712,7 +719,7 @@ select.input { padding-right: 30px; }
   }
   .tabbar a, .tabbar button {
     display: grid; justify-items: center; align-content: center; gap: 3px; min-height: 52px; border: 0; background: none;
-    color: var(--ink-3); text-decoration: none; font-size: 10.5px; font-weight: 650; border-radius: 12px;
+    color: var(--ink-3); text-decoration: none; font-size: 11px; font-weight: 650; border-radius: 12px;
   }
   .tabbar a[aria-current="page"] { color: var(--accent-ink); }
   .toasts { bottom: calc(84px + env(safe-area-inset-bottom)); }
@@ -746,10 +753,18 @@ select.input { padding-right: 30px; }
 }
 
 @media (pointer: coarse) {
-  .btn { min-height: 42px; }
-  .btn.sm { min-height: 36px; }
-  .icon-btn { width: 42px; height: 42px; }
-  .seg button { min-height: 36px; }
+  .btn { min-height: 44px; }
+  .btn.sm { min-height: 40px; }
+  .icon-btn { width: 44px; height: 44px; }
+  .seg button { min-height: 40px; }
+  /* Link di testo e "mostra di più": area da toccare più alta senza spostare niente. */
+  .card-link, .bd-link, .table-toggle summary, .alerts-tips summary { padding-block: 10px; margin-block: -10px; }
+  /* Sotto i 16px iOS ingrandisce la pagina quando si tocca un campo. */
+  .input, .search input { font-size: 16px; }
+  .input { min-height: 44px; }
+  .chip { min-height: 40px; }
+  .switch { position: relative; }
+  .switch::after { content: ""; position: absolute; inset: -9px -4px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

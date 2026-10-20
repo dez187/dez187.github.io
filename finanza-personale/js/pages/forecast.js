@@ -88,12 +88,12 @@ function forecastTab(app) {
 
     <section class="card span-12" aria-labelledby="h-fc-acc">
       ${cardHead("Conto per conto", "", "h-fc-acc")}
-      ${!accounts.length ? emptyState("Nessun conto", "Aggiungi un conto per vedere la previsione conto per conto.") : html`<div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">Conto</th><th scope="col" class="num">Oggi</th><th scope="col" class="num">Minimo previsto</th><th scope="col" class="num hide-sm">Quando</th><th scope="col" class="num">Fra ${view.days} giorni</th></tr></thead>
+      ${!accounts.length ? emptyState("Nessun conto", "Aggiungi un conto per vedere la previsione conto per conto.") : html`<div class="table-wrap"><table class="table fc-acc">
+        <thead><tr><th scope="col">Conto</th><th scope="col" class="num hide-sm">Oggi</th><th scope="col" class="num">Minimo previsto</th><th scope="col" class="num hide-sm">Quando</th><th scope="col" class="num">Fra ${view.days} giorni</th></tr></thead>
         <tbody>${accounts.map((a) => html`<tr>
           <th scope="row"><button type="button" class="cell-link" data-action="account-detail" data-coll="accounts" data-id="${a.id}"><span class="cell-title">${a.name}</span></button></th>
-          <td class="num">${fmtEUR(a.start)}</td>
-          <td class="num ${a.min.value < 0 ? "neg" : ""}"><strong>${fmtEUR(a.min.value)}</strong></td>
+          <td class="num hide-sm">${fmtEUR(a.start)}</td>
+          <td class="num ${a.min.value < 0 ? "neg" : ""}"><strong>${fmtEUR(a.min.value)}</strong><span class="cell-sub show-sm">${a.min.date === today ? "oggi" : fmtDayMonth(a.min.date)}</span></td>
           <td class="num hide-sm">${a.min.date === today ? "oggi" : fmtDayMonth(a.min.date)}</td>
           <td class="num ${a.end < 0 ? "neg" : ""}">${fmtEUR(a.end)}</td></tr>`)}</tbody>
       </table></div>`}

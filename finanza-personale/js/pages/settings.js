@@ -7,7 +7,7 @@ import { emptyState } from "../ui/components.js";
 import { openSheet } from "../ui/feedback.js";
 import { cardHead, pageHead } from "./shared.js";
 
-export const APP_VERSION = "2.1.0";
+export const APP_VERSION = "2.1.1";
 
 function row(title, text, control) {
   return html`<div class="setting"><div class="setting-text"><p class="setting-title">${title}</p>${text ? html`<p class="setting-sub">${text}</p>` : ""}</div><div class="setting-control">${control}</div></div>`;

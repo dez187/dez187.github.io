@@ -51,7 +51,7 @@ const TABS = [
   { path: "", label: "Panoramica", icon: "home" },
   { path: "conti", label: "Conti", icon: "wallet" },
   { path: "transazioni", label: "Movimenti", icon: "list" },
-  { path: "investimenti", label: "Investimenti", icon: "trend" },
+  { path: "previsioni", label: "Previsioni", icon: "forecast" },
 ];
 // Azioni che aprono qualcos'altro: chiudono prima la finestra da cui sono state avviate.
 const CLOSES_DIALOG = new Set(["edit-tx", "edit-schedule", "edit", "add", "account-detail", "register-pac", "new-op", "settle-card", "import-csv", "import-paypal", "open-rules"]);

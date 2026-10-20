@@ -222,16 +222,18 @@ export default {
     if (view.month !== "all" && !months.includes(view.month)) view.month = "all";
     const cats = [...new Set(state.transactions.map((t) => t.category || "Altro"))].sort((a, b) => a.localeCompare(b, "it"));
     const rows = view.tab === "movimenti" ? state.transactions.filter((t) => matches(t, state)) : [];
+    const active = [view.month !== "all", !!view.account, !!view.category, view.kind !== "all"].filter(Boolean).length;
     const tabs = html`<div class="tabs" role="tablist" aria-label="Vista">
       <button type="button" role="tab" data-action="tx-tab" data-value="movimenti" aria-selected="${view.tab === "movimenti"}">Movimenti</button>
       <button type="button" role="tab" data-action="tx-tab" data-value="programmate" aria-selected="${view.tab === "programmate"}">Programmate <span class="count">${state.schedules.filter((s) => s.status !== "Concluso").length}</span></button>
     </div>`;
     return html`
-      ${pageHead("Transazioni", html`<button type="button" class="btn" data-action="import-csv">${icon("upload", 18)}<span>Importa</span></button><button type="button" class="btn" data-action="export-csv">${icon("download", 18)}<span>CSV</span></button><button type="button" class="btn primary" data-action="new-op">${icon("plus", 18)}<span>Nuova operazione</span></button>`)}
+      ${pageHead("Transazioni", html`<button type="button" class="btn" data-action="import-csv">${icon("upload", 18)}<span>Importa</span></button><button type="button" class="btn" data-action="export-csv">${icon("download", 18)}<span>Esporta</span></button><button type="button" class="btn primary" data-action="new-op">${icon("plus", 18)}<span>Nuova operazione</span></button>`)}
       ${tabs}
       ${view.tab === "programmate" ? schedulesView(app) : html`
-        <div class="filters" role="search">
+        <div class="filters${view.filtersOpen ? " open" : ""}" role="search">
           <label class="search"><span class="sr-only">Cerca nei movimenti</span>${icon("search", 18)}<input id="tx-q" type="search" placeholder="Cerca descrizione, categoria, importo…" value="${view.q}" data-input="q" autocomplete="off"></label>
+          <button type="button" class="btn filters-toggle" id="tx-filters" data-action="tx-filters" aria-expanded="${!!view.filtersOpen}">${icon("sliders", 18)}<span>Filtri${active ? ` (${active})` : ""}</span></button>
           <label class="filter"><span class="sr-only">Mese</span><select id="tx-month" class="input" data-input="month"><option value="all">Tutti i mesi</option>${months.map((m) => html`<option value="${m}"${raw(m === view.month ? " selected" : "")}>${fmtMonth(m)}</option>`)}</select></label>
           <label class="filter"><span class="sr-only">Conto</span><select id="tx-account" class="input" data-input="account"><option value="">Tutti i conti</option>${accountOptions(state, view.account, { prefix: "account:", cards: true })}</select></label>
           <label class="filter"><span class="sr-only">Categoria</span><select id="tx-cat" class="input" data-input="category"><option value="">Tutte le categorie</option>${cats.map((c) => html`<option value="${c}"${raw(c === view.category ? " selected" : "")}>${c}</option>`)}</select></label>
@@ -241,6 +243,7 @@ export default {
   },
   actions: {
     "tx-tab": (el, app) => { view.tab = el.dataset.value; app.rerender(); },
+    "tx-filters": (el, app) => { view.filtersOpen = !view.filtersOpen; app.rerender(); },
     "tx-kind": (el, app) => { view.kind = el.dataset.value; view.limit = 150; app.rerender(); },
     "tx-more": (el, app) => { view.limit += 150; app.rerender(); },
     "tx-clear": (el, app) => { Object.assign(view, { q: "", month: "all", account: "", category: "", kind: "all", limit: 150 }); app.rerender(); },
